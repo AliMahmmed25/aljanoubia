@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en" id="users">
+
+<head>
+
+	<meta charset="utf-8">
+	<meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport">
+
+
+	<!-- Title -->
+	<title>واجهة اضافة المستخدمين</title>
+
+	<!-- Bootstrap css-->
+	<link id="style" href="../assets/plugins/bootstrap/css/bootstrap.rtl.min.css" rel="stylesheet" />
+	<!-- DATA TABLE CSS -->
+	<link href="https://www.jqueryscript.net/css/jquerysctipttop.css" rel="stylesheet" type="text/css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/flatly/bootstrap.min.css">
+	<link rel="stylesheet" href="https://cdn.materialdesignicons.com/5.0.45/css/materialdesignicons.min.css">
+
+	<link href="../assets/plugins/datatable/css/dataTables.bootstrap5.css" rel="stylesheet" />
+	<link href="../assets/plugins/datatable/css/buttons.bootstrap5.min.css" rel="stylesheet">
+	<link href="../assets/plugins/datatable/css/responsive.bootstrap5.css" rel="stylesheet" />
+
+	<!-- Icons css-->
+	<link href="../assets/plugins/web-fonts/icons.css" rel="stylesheet" />
+	<link href="../assets/plugins/web-fonts/font-awesome/font-awesome.min.css" rel="stylesheet">
+	<link href="../assets/plugins/web-fonts/plugin.css" rel="stylesheet" />
+
+	<!-- Style css-->
+	<link href="../assets/css/style.css" rel="stylesheet">
+	<link href="../assets/css/combotree.css" rel="stylesheet">
+	<!-- Select2 css-->
+	<link href="../assets/plugins/select2/css/select2.min.css" rel="stylesheet">
+
+	<!-- Mutipleselect css-->
+	<link rel="stylesheet" href="../assets/plugins/multipleselect/multiple-select.css">
+
+</head>
+
+<body class="rtl main-body rightmenu">
+
+	<!-- Loader -->
+	<div id="global-loader">
+		<img src="../assets/img/loader.svg" class="loader-img" alt="Loader">
+	</div>
+	<!-- End Loader -->
+
+
+	<!-- Page -->
+	<div class="page">
+
+		<!-- Main Header-->
+		<div class="main-header side-header sticky">
+			<div class="main-container container-fluid">
+				<div class="main-header-right">
+					<a class="main-header-menu-icon" href="javascript:void(0)" id="mainSidebarToggle"><span></span></a>
+					<div class="hor-logo">
+						<a class="main-logo" href="index.html">
+							<img src="../assets/img/brand/aljanoubia.png" class="header-brand-img desktop-logo"
+								alt="logo">
+							<img src="../assets/img/brand/aljanoubia.png" class="header-brand-img desktop-logo-dark"
+								alt="logo">
+						</a>
+					</div>
+				</div>
+				<div class="main-header-center">
+					<div class="responsive-logo">
+						<a href="index.html"><img src="../assets/img/brand/aljanoubia.png" class="mobile-logo"
+								alt="logo"></a>
+						<a href="index.html"><img src="../assets/img/brand/aljanoubia.png" class="mobile-logo-dark"
+								alt="logo"></a>
+					</div>
+
+				</div>
+				<div class="main-header-right">
+					<button class="navbar-toggler navresponsive-toggler" type="button" data-bs-toggle="collapse"
+						data-bs-target="#navbarSupportedContent-4" aria-controls="navbarSupportedContent-4"
+						aria-expanded="false" aria-label="Toggle navigation">
+						<i class="fe fe-more-vertical header-icons navbar-toggler-icon"></i>
+					</button><!-- Navresponsive closed -->
+					<div
+						class="navbar navbar-expand-lg  nav nav-item  navbar-nav-right responsive-navbar navbar-dark  ">
+						<div class="collapse navbar-collapse" id="navbarSupportedContent-4">
+							<div class="d-flex order-lg-2 ms-auto">
+
+								<!-- Theme-Layout -->
+								<div class="dropdown d-flex main-header-theme">
+									<a class="nav-link icon layout-setting">
+										<span class="dark-layout">
+											<i class="fe fe-sun header-icons"></i>
+										</span>
+										<span class="light-layout">
+											<i class="fe fe-moon header-icons"></i>
+										</span>
+									</a>
+								</div>
+								<!-- Theme-Layout -->
+
+								<!-- Full screen -->
+								<div class="dropdown ">
+									<a class="nav-link icon full-screen-link">
+										<i class="fe fe-maximize fullscreen-button fullscreen header-icons"></i>
+										<i class="fe fe-minimize fullscreen-button exit-fullscreen header-icons"></i>
+									</a>
+								</div>
+								<!-- Full screen -->
+
+								<!-- Profile -->
+								<div class="dropdown main-profile-menu">
+									<a class="d-flex" href="javascript:void(0)">
+										<span class="main-img-user"><img alt="avatar"
+												src="../assets/img/users/1.jpg"></span>
+									</a>
+									<div class="dropdown-menu">
+										<div class="header-navheading">
+											<h6 id="username" class="main-notification-title">الاسم الاول + الاسم الاخير
+											</h6>
+											<p id="jobtital" class="main-notification-text">العنوان الوظيفي</p>
+										</div>
+
+										<a class="dropdown-item" href="Login.html">
+											<i class="fe fe-power"></i> تسجيل خروج
+										</a>
+									</div>
+								</div>
+								<!-- Profile -->
+
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- End Main Header-->
+
+		<!-- Sidemenu -->
+		<div class="sticky">
+			<div class="main-menu main-sidebar main-sidebar-sticky side-menu">
+				<div class="main-sidebar-header main-container-1 active">
+					<div class="sidemenu-logo">
+						<a class="main-logo" href="index.html">
+							<img src="../assets/img/brand/aljanoubia.png" class="header-brand-img desktop-logo"
+								alt="logo">
+							<img src="../assets/img/brand/aljanoubia.png"
+								class="header-brand-img desktop-logo theme-logo" alt="logo">
+						</a>
+					</div>
+					<div class="main-sidebar-body main-body-1">
+						<div class="slide-right disabled" id="slide-right"><i class="fe fe-chevron-right"></i></div>
+						<ul class="menu-nav nav">
+							<li class="nav-header"><span class="nav-label">نظام ادارة الموقع</span></li>
+							<li class="nav-item">
+								<a class="nav-link" href="index.html">
+									<span class="shape1"></span>
+									<span class="shape2"></span>
+									<i class="ti-home sidemenu-icon menu-icon "></i>
+									<span class="sidemenu-label">الواجهة الرائيسية</span>
+								</a>
+							</li>
+
+
+
+
+							<li class="nav-header"><span class="nav-label">الاعدادات</span></li>
+							<li class="nav-item">
+								<a class="nav-link with-sub" href="javascript:void(0)">
+									<span class="shape1"></span>
+									<span class="shape2"></span>
+									<i class="ti-receipt sidemenu-icon menu-icon "></i>
+									<span class="sidemenu-label ">الملفات الاساسية</span>
+									<i class="angle fe fe-chevron-right"></i>
+								</a>
+								<ul class="nav-sub">
+									<li class="side-menu-label1"><a href="javascript:void(0)">الملفات الاساسية</a></li>
+									<li class="nav-sub-item"><a class="nav-sub-link" href="Users.html">المستخدمين</a>
+									</li>
+								</ul>
+							</li>
+
+
+						</ul>
+						<div class="slide-right" id="slide-right"><i class="fe fe-chevron-right"></i></div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- End Sidemenu -->
+
+		<!-- Main Content-->
+		<div class="main-content side-content pt-0">
+
+			<div class="main-container container-fluid">
+				<div class="inner-body">
+
+					<!-- Page Header -->
+					<div class="page-header">
+						
+					</div>
+					<!-- End Page Header -->
+					<!-- Row -->
+					<div class="row row-sm">
+						<div class="col-lg-12">
+							<div class="card custom-card overflow-hidden">
+								<div class="card-body">
+									<div style="margin-bottom: 10px;">
+										<button class="btn ripple btn-primary pd-x-15 mg-r-5"
+											data-bs-target="#modalSave" data-bs-toggle="modal">اضافة مستخدم
+											جديد</button>
+									</div>
+									<div>
+
+									</div>
+									<div class="table-responsive">
+										<table id="exportexample"
+											class="table table-bordered border-t0 key-buttons text-nowrap w-100">
+											<thead>
+												<tr>
+													<th>المعرف</th>
+													<th>الاسم الاول</th>
+													<th>الاسم الاخير</th>
+													<th>اسم المستخدم</th>
+													<th>حالة المستخدم</th>
+													<th>اجراء</th>
+												</tr>
+											</thead>
+											<tbody>
+												<tr>
+													<td>1</td>
+													<td>علي</td>
+													<td>محمد</td>
+													<td>علي محمد</td>
+													<td>فعال</td>
+													<td>
+														<a id="edit" class="btn btn-sm btn-primary">
+															<i class="fe fe-edit-2" data-bs-target="#modalEdit"
+																data-bs-toggle="modal"></i>
+														</a>
+													</td>
+												</tr>
+												<tr>
+													<td>2</td>
+													<td>محمود</td>
+													<td>بشير</td>
+													<td>محمود بشير</td>
+													<td>فعال</td>
+													<td>
+														<a id="edit" class="btn btn-sm btn-primary">
+															<i class="fe fe-edit-2" data-bs-target="#modalEdit"
+																data-bs-toggle="modal"></i>
+														</a>
+													</td>
+												</tr>
+												<tr>
+													<td>3</td>
+													<td>خالد </td>
+													<td>وليد</td>
+													<td>خالد وليد</td>
+													<td>فعال</td>
+													<td>
+														<a id="edit" class="btn btn-sm btn-primary">
+															<i class="fe fe-edit-2" data-bs-target="#modalEdit"
+																data-bs-toggle="modal"></i>
+														</a>
+													</td>
+												</tr>
+
+												<tr>
+													<td>4</td>
+													<td>عبدالله </td>
+													<td>وليد</td>
+													<td>عبدالله وليد</td>
+													<td>فعال</td>
+													<td>
+														<a id="edit" class="btn btn-sm btn-primary">
+															<i class="fe fe-edit-2" data-bs-target="#modalEdit"
+																data-bs-toggle="modal"></i>
+														</a>
+													</td>
+												</tr>
+
+
+											</tbody>
+										</table>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!-- End Row -->
+
+				</div>
+			</div>
+		</div>
+		<!-- End Main Content-->
+
+		<!-- Main Footer-->
+		<div class="main-footer text-center">
+			<div class="container">
+				<div class="row row-sm">
+					<div class="col-md-12">
+						<span>حقوق النشر © 2022 <a href="javascript:void(0)">موقع قناة الجنوبية</a>. <a
+								href="https://www.spruko.com/"></a>كل الحقوق محفوظة.</span>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--End Footer-->
+
+
+	</div>
+	<!-- End Page -->
+	<!-- Form Modal -->
+	<div class="modal" id="modalSave">
+		<div class="modal-dialog wd-xl-400" role="document">
+			<div class="modal-content">
+				<div class="modal-body pd-20 pd-sm-40">
+					<button aria-label="Close" class="close pos-absolute t-15 r-20 tx-26" data-bs-dismiss="modal"
+						type="button"><span aria-hidden="true">&times;</span></button>
+					<h5 class="modal-title mb-4 text-center">انشاء مستخدم جديد</h5>
+					<div class="form-group">
+						<input id="txtFirstName" class="form-control" placeholder="الاسم الاول" type="text">
+					</div>
+					<div class="form-group">
+						<input id="txtLastName" class="form-control" placeholder="الاسم الاخير" type="text">
+					</div>
+					<div class="form-group">
+						<input id="txtUserName" class="form-control" placeholder="اسم المستخدم" type="text">
+					</div>
+					<div class="form-group">
+						<input id="txtPassword" class="form-control" placeholder="كلمة السر" type="password">
+					</div>
+					<div class="form-group">
+						<input type="text" class="form-control" id="justAnInputBox" placeholder="اختيار صلاحية المستخدم"
+							autocomplete="off" />
+					</div>
+					<div class="form-group">
+						<select id="active" class="form-control" Required>
+							<option value="" selected hidden>اختيار حالة المستخدم</option>
+							<option value="0">فعال</option>
+							<option value="1">غير فعال</option>
+						</select>
+					</div>
+
+					<button class="btn ripple btn-primary" type="button">Save changes</button>
+					<button class="btn ripple btn-secondary" data-bs-dismiss="modal" type="button">Close</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- End Form Modal -->
+	<!-- Form Modal -->
+	<div class="modal" id="modalEdit">
+		<div class="modal-dialog wd-xl-400" role="document">
+			<div class="modal-content">
+				<div class="modal-body pd-20 pd-sm-40">
+					<button aria-label="Close" class="close pos-absolute t-15 r-20 tx-26" data-bs-dismiss="modal"
+						type="button"><span aria-hidden="true">&times;</span></button>
+					<h5 class="modal-title mb-4 text-center">تعديل مستخدم</h5>
+					<div class="form-group">
+						<input id="txtID" class="form-control" placeholder="المعرف" type="text" disabled>
+					</div>
+					<div class="form-group">
+						<input id="txtFirstName2" class="form-control" placeholder="الاسم الاول" type="text">
+					</div>
+					<div class="form-group">
+						<input id="txtLastName2" class="form-control" placeholder="الاسم الاخير" type="text">
+					</div>
+					<div class="form-group">
+						<input id="txtUserName2" class="form-control" placeholder="اسم المستخدم" type="text">
+					</div>
+					<div class="form-group">
+						<input id="txtPassword2" class="form-control" placeholder="كلمة السر" type="password">
+					</div>
+					<div class="form-group">
+						<input type="text" class="form-control" id="justAnInputBox2"
+							placeholder="اختيار صلاحية المستخدم" autocomplete="off" />
+					</div>
+					<div class="form-group">
+						<select id="active2" class="form-control" Required>
+							<option value="" selected hidden>اختيار حالة المستخدم</option>
+							<option value="0">فعال</option>
+							<option value="1">غير فعال</option>
+						</select>
+					</div>
+
+					<button class="btn ripple btn-primary" type="button">Save changes</button>
+					<button class="btn ripple btn-secondary" data-bs-dismiss="modal" type="button">Close</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- End Form Modal -->
+
+
+	<!-- Back-to-top -->
+	<a href="#top" id="back-to-top"><i class="fe fe-arrow-up"></i></a>
+
+	<!-- Jquery js-->
+	<script src="../assets/plugins/jquery/jquery.min.js"></script>
+
+	<!-- Bootstrap js-->
+	<script src="../assets/plugins/bootstrap/js/popper.min.js"></script>
+	<script src="../assets/plugins/combotree/comboTreePlugin.js"></script>
+	<script src="../assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+
+
+	<!-- Internal Data Table js -->
+	<script src="../assets/plugins/datatable/js/jquery.dataTables.min.js"></script>
+	<script src="../assets/plugins/datatable/js/dataTables.bootstrap5.js"></script>
+	<script src="../assets/plugins/datatable/js/dataTables.buttons.min.js"></script>
+	<script src="../assets/plugins/datatable/js/buttons.bootstrap5.min.js"></script>
+	<script src="../assets/plugins/datatable/js/jszip.min.js"></script>
+	<script src="../assets/plugins/datatable/pdfmake/pdfmake.min.js"></script>
+	<script src="../assets/plugins/datatable/pdfmake/vfs_fonts.js"></script>
+	<script src="../assets/plugins/datatable/js/buttons.html5.min.js"></script>
+	<script src="../assets/plugins/datatable/js/buttons.print.min.js"></script>
+	<script src="../assets/plugins/datatable/js/buttons.colVis.min.js"></script>
+	<script src="../assets/plugins/datatable/dataTables.responsive.min.js"></script>
+	<script src="../assets/plugins/datatable/responsive.bootstrap5.min.js"></script>
+	<script src="../assets/js/table-data.js"></script>
+	<script src="../assets/js/select2.js"></script>
+	<!-- Peity js-->
+	<script src="../assets/plugins/peity/jquery.peity.min.js"></script>
+
+	<!-- Select2 js-->
+	<script src="../assets/plugins/select2/js/select2.min.js"></script>
+	<script src="../assets/js/select2.js"></script>
+
+	<!-- Perfect-scrollbar js -->
+	<script src="../assets/plugins/perfect-scrollbar/perfect-scrollbar.min.js"></script>
+
+	<!-- Sidemenu js -->
+	<script src="../assets/plugins/sidemenu/sidemenu.js"></script>
+
+	<!-- Sidebar js -->
+	<script src="../assets/plugins/sidebar/sidebar.js"></script>
+
+	<!-- Color Theme js -->
+	<script src="../assets/js/themeColors.js"></script>
+
+
+	<!-- Custom js -->
+	<script src="../assets/js/custom.js"></script>
+	<script src="../assets/js/pages/users.js"></script>
+
+
+</body>
+
+</html>
