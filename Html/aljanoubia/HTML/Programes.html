@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html lang="en" id="users">
+
+<head>
+
+	<meta charset="utf-8">
+	<meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport">
+
+
+	<!-- Title -->
+	<title>البرامج</title>
+
+	<!-- Bootstrap css-->
+	<link id="style" href="../assets/plugins/bootstrap/css/bootstrap.rtl.min.css" rel="stylesheet" />
+	<!-- DATA TABLE CSS -->
+	<link href="https://www.jqueryscript.net/css/jquerysctipttop.css" rel="stylesheet" type="text/css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/flatly/bootstrap.min.css">
+	<link rel="stylesheet" href="https://cdn.materialdesignicons.com/5.0.45/css/materialdesignicons.min.css">
+
+	<link href="../assets/plugins/datatable/css/dataTables.bootstrap5.css" rel="stylesheet" />
+	<link href="../assets/plugins/datatable/css/buttons.bootstrap5.min.css" rel="stylesheet">
+	<link href="../assets/plugins/datatable/css/responsive.bootstrap5.css" rel="stylesheet" />
+
+	<!-- Icons css-->
+	<link href="../assets/plugins/web-fonts/icons.css" rel="stylesheet" />
+	<link href="../assets/plugins/web-fonts/font-awesome/font-awesome.min.css" rel="stylesheet">
+	<link href="../assets/plugins/web-fonts/plugin.css" rel="stylesheet" />
+
+	<!-- Style css-->
+	<link href="../assets/css/style.css" rel="stylesheet">
+	<link href="../assets/css/combotree.css" rel="stylesheet">
+	<!-- Select2 css-->
+	<link href="../assets/plugins/select2/css/select2.min.css" rel="stylesheet">
+
+	<!-- Mutipleselect css-->
+	<link rel="stylesheet" href="../assets/plugins/multipleselect/multiple-select.css">
+
+</head>
+
+<body class="rtl main-body rightmenu">
+
+	<!-- Loader -->
+	<div id="global-loader">
+		<img src="../assets/img/loader.svg" class="loader-img" alt="Loader">
+	</div>
+	<!-- End Loader -->
+
+
+	<!-- Page -->
+	<div class="page">
+
+		<!-- Main Header-->
+		<div class="main-header side-header sticky">
+			<div class="main-container container-fluid">
+				<div class="main-header-right">
+					<a class="main-header-menu-icon" href="javascript:void(0)" id="mainSidebarToggle"><span></span></a>
+					<div class="hor-logo">
+						<a class="main-logo" href="index.html">
+							<img src="../assets/img/brand/aljanoubia.png" class="header-brand-img desktop-logo"
+								alt="logo">
+							<img src="../assets/img/brand/aljanoubia.png" class="header-brand-img desktop-logo-dark"
+								alt="logo">
+						</a>
+					</div>
+				</div>
+				<div class="main-header-center">
+					<div class="responsive-logo">
+						<a href="index.html"><img src="../assets/img/brand/aljanoubia.png" class="mobile-logo"
+								alt="logo"></a>
+						<a href="index.html"><img src="../assets/img/brand/aljanoubia.png" class="mobile-logo-dark"
+								alt="logo"></a>
+					</div>
+
+				</div>
+				<div class="main-header-right">
+					<button class="navbar-toggler navresponsive-toggler" type="button" data-bs-toggle="collapse"
+						data-bs-target="#navbarSupportedContent-4" aria-controls="navbarSupportedContent-4"
+						aria-expanded="false" aria-label="Toggle navigation">
+						<i class="fe fe-more-vertical header-icons navbar-toggler-icon"></i>
+					</button><!-- Navresponsive closed -->
+					<div
+						class="navbar navbar-expand-lg  nav nav-item  navbar-nav-right responsive-navbar navbar-dark  ">
+						<div class="collapse navbar-collapse" id="navbarSupportedContent-4">
+							<div class="d-flex order-lg-2 ms-auto">
+
+								<!-- Theme-Layout -->
+								<div class="dropdown d-flex main-header-theme">
+									<a class="nav-link icon layout-setting">
+										<span class="dark-layout">
+											<i class="fe fe-sun header-icons"></i>
+										</span>
+										<span class="light-layout">
+											<i class="fe fe-moon header-icons"></i>
+										</span>
+									</a>
+								</div>
+								<!-- Theme-Layout -->
+
+								<!-- Full screen -->
+								<div class="dropdown ">
+									<a class="nav-link icon full-screen-link">
+										<i class="fe fe-maximize fullscreen-button fullscreen header-icons"></i>
+										<i class="fe fe-minimize fullscreen-button exit-fullscreen header-icons"></i>
+									</a>
+								</div>
+								<!-- Full screen -->
+
+								<!-- Profile -->
+								<div class="dropdown main-profile-menu">
+									<a class="d-flex" href="javascript:void(0)">
+										<span class="main-img-user"><img alt="avatar"
+												src="../assets/img/users/1.jpg"></span>
+									</a>
+									<div class="dropdown-menu">
+										<div class="header-navheading">
+											<h6 id="username" class="main-notification-title">الاسم الاول + الاسم الاخير
+											</h6>
+											<p id="jobtital" class="main-notification-text">العنوان الوظيفي</p>
+										</div>
+
+										<a class="dropdown-item" href="Login.html">
+											<i class="fe fe-power"></i> تسجيل خروج
+										</a>
+									</div>
+								</div>
+								<!-- Profile -->
+
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- End Main Header-->
+
+		<!-- Sidemenu -->
+		<div class="sticky">
+			<div class="main-menu main-sidebar main-sidebar-sticky side-menu">
+				<div class="main-sidebar-header main-container-1 active">
+					<div class="sidemenu-logo">
+						<a class="main-logo" href="index.html">
+							<img src="../assets/img/brand/aljanoubia.png" class="header-brand-img desktop-logo"
+								alt="logo">
+							<img src="../assets/img/brand/aljanoubia.png"
+								class="header-brand-img desktop-logo theme-logo" alt="logo">
+						</a>
+					</div>
+					<div class="main-sidebar-body main-body-1">
+						<div class="slide-right disabled" id="slide-right"><i class="fe fe-chevron-right"></i></div>
+						<ul class="menu-nav nav">
+							<li class="nav-header"><span class="nav-label">نظام ادارة الموقع</span></li>
+							<li class="nav-item">
+								<a class="nav-link" href="index.html">
+									<span class="shape1"></span>
+									<span class="shape2"></span>
+									<i class="ti-home sidemenu-icon menu-icon "></i>
+									<span class="sidemenu-label">الواجهة الرائيسية</span>
+								</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link with-sub" href="javascript:void(0)">
+									<span class="shape1"></span>
+									<span class="shape2"></span>
+									<i class="ti-receipt sidemenu-icon menu-icon "></i>
+									<span class="sidemenu-label ">البرامج</span>
+									<i class="angle fe fe-chevron-right"></i>
+								</a>
+								<ul class="nav-sub">
+									<li class="nav-sub-item"><a class="nav-sub-link" href="Programes.html">عرض البرامج</a></li>
+								</ul>
+							</li>
+
+
+
+
+							<li class="nav-header"><span class="nav-label">الاعدادات</span></li>
+							<li class="nav-item">
+								<a class="nav-link with-sub" href="javascript:void(0)">
+									<span class="shape1"></span>
+									<span class="shape2"></span>
+									<i class="ti-receipt sidemenu-icon menu-icon "></i>
+									<span class="sidemenu-label ">الملفات الاساسية</span>
+									<i class="angle fe fe-chevron-right"></i>
+								</a>
+								<ul class="nav-sub">
+									<li class="side-menu-label1"><a href="javascript:void(0)">الملفات الاساسية</a></li>
+									<li class="nav-sub-item"><a class="nav-sub-link" href="Users.html">المستخدمين</a>
+									</li>
+									<li class="nav-sub-item"><a class="nav-sub-link" href="Categorie.html">تصنيفات
+											الاخبار</a></li>
+								</ul>
+							</li>
+
+
+						</ul>
+						<div class="slide-right" id="slide-right"><i class="fe fe-chevron-right"></i></div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- End Sidemenu -->
+
+		<!-- Main Content-->
+		<div class="main-content side-content pt-0">
+
+			<div class="main-container container-fluid">
+				<div class="inner-body">
+
+					<!-- Page Header -->
+					<div class="page-header">
+						<div>
+							<h2 class="main-content-title tx-24 mg-b-5">البرامج</h2>
+							<ol class="breadcrumb">
+								<li class="breadcrumb-item"><a href="index.html">الصفحة الرائيسية</a></li>
+								<li class="breadcrumb-item active" aria-current="page">البرامج</li>
+							</ol>
+						</div>
+
+					</div>
+					<!-- End Page Header -->
+
+					<!-- Row -->
+					<div class="row row-sm">
+						<div class="col-md-8 col-lg-9">
+							<div class="row row-sm">
+								<div class="col-md-6 col-lg-6 col-xl-4 col-sm-6">
+									<div class="card custom-card">
+										<div class="p-0 ht-100p">
+											<div class="product-grid">
+												<div class="product-image">
+													<a href="EditPrograme.html" class="image">
+														<img class="pic-1" alt="product-image-1"
+															src="../assets/img/programmes/p1.jpg">
+														<img class="pic-2" alt="product-image-2"
+															src="../assets/img/programmes/p11.jpg">
+													</a>
+													<div class="product-link">
+														<a href="AddProgrameEpisodes.html">
+															<i class="fa fa-plus-circle"></i>
+															<span>اضافة حلقة جديدة</span>
+														</a>
+														<a href="EditPrograme.html">
+															<i class="fas fa-pencil-square"></i>
+															<span>تعديل معلومات البرنامج</span>
+														</a>
+													</div>
+												</div>
+												<div class="product-content">
+													<h3 id="programeName" class="title"><a href="#">برنامج اغلبية
+															صامتة</a></h3>
+													<div class="price"><span id="programmeCategorie">اخبار</span></div>
+
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="col-md-6 col-lg-6 col-xl-4 col-sm-6">
+									<div class="card custom-card">
+										<div class="p-0 ht-100p">
+											<div class="product-grid">
+												<div class="product-image">
+													<a href="EditPrograme.html" class="image">
+														<img class="pic-1" alt="product-image-1"
+															src="../assets/img/programmes/p2.jpg">
+														<img class="pic-2" alt="product-image-2"
+															src="../assets/img/programmes/p22.jpg">
+													</a>
+													<div class="product-link">
+														<a href="AddProgrameEpisodes.html">
+															<i class="fa fa-plus-circle"></i>
+															<span>اضافة حلقة جديدة</span>
+														</a>
+														<a href="EditPrograme.html">
+															<i class="fas fa-pencil-square"></i>
+															<span>تعديل معلومات البرنامج</span>
+														</a>
+													</div>
+												</div>
+												<div class="product-content">
+													<h3 id="programeName" class="title"><a href="#">برنامج الجمهورية
+															السادسة</a></h3>
+													<div class="price"><span id="programmeCategorie">اخبار</span></div>
+
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="col-md-6 col-lg-6 col-xl-4 col-sm-6">
+									<div class="card custom-card">
+										<div class="p-0 ht-100p">
+											<div class="product-grid">
+												<div class="product-image">
+													<a href="EditPrograme.html" class="image">
+														<img class="pic-1" alt="product-image-1"
+															src="../assets/img/programmes/p3.jpg">
+														<img class="pic-2" alt="product-image-2"
+															src="../assets/img/programmes/p33.jpg">
+													</a>
+													<div class="product-link">
+														<a href="AddProgrameEpisodes.html">
+															<i class="fa fa-plus-circle"></i>
+															<span>اضافة حلقة جديدة</span>
+														</a>
+														<a href="EditPrograme.html">
+															<i class="fas fa-pencil-square"></i>
+															<span>تعديل معلومات البرنامج</span>
+														</a>
+													</div>
+												</div>
+												<div class="product-content">
+													<h3 id="programeName" class="title"><a href="#">برنامج اطراف الحديث
+														</a></h3>
+													<div class="price"><span id="programmeCategorie">اخبار</span></div>
+
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+
+								<div class="col-md-6 col-lg-6 col-xl-4 col-sm-6">
+									<div class="card custom-card">
+										<div class="p-0 ht-100p">
+											<div class="product-grid">
+												<div class="product-image">
+													<a href="EditPrograme.html" class="image">
+														<img class="pic-1" alt="product-image-1"
+															src="../assets/img/programmes/p4.jpg">
+														<img class="pic-2" alt="product-image-2"
+															src="../assets/img/programmes/p44.jpg">
+													</a>
+													<div class="product-link">
+														<a href="AddProgrameEpisodes.html">
+															<i class="fa fa-plus-circle"></i>
+															<span>اضافة حلقة جديدة</span>
+														</a>
+														<a href="EditPrograme.html">
+															<i class="fas fa-pencil-square"></i>
+															<span>تعديل معلومات البرنامج</span>
+														</a>
+													</div>
+												</div>
+												<div class="product-content">
+													<h3 id="programeName" class="title"><a href="#">برنامج مانشيت احمر
+														</a></h3>
+													<div class="price"><span id="programmeCategorie">اخبار</span></div>
+
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="col-md-6 col-lg-6 col-xl-4 col-sm-6">
+									<div class="card custom-card">
+										<div class="p-0 ht-100p">
+											<div class="product-grid">
+												<div class="product-image">
+													<a href="EditPrograme.html" class="image">
+														<img class="pic-1" alt="product-image-1"
+															src="../assets/img/programmes/p1.jpg">
+														<img class="pic-2" alt="product-image-2"
+															src="../assets/img/programmes/p11.jpg">
+													</a>
+													<div class="product-link">
+														<a href="AddProgrameEpisodes.html">
+															<i class="fa fa-plus-circle"></i>
+															<span>اضافة حلقة جديدة</span>
+														</a>
+														<a href="EditPrograme.html">
+															<i class="fas fa-pencil-square"></i>
+															<span >تعديل معلومات البرنامج</span>
+														</a>
+													</div>
+												</div>
+												<div class="product-content">
+													<h3 id="programeName" class="title"><a href="#">برنامج اغلبية
+															صامتة</a></h3>
+													<div class="price"><span id="programmeCategorie">اخبار</span></div>
+
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="col-md-6 col-lg-6 col-xl-4 col-sm-6">
+									<div class="card custom-card">
+										<div class="p-0 ht-100p">
+											<div class="product-grid">
+												<div class="product-image">
+													<a href="EditPrograme.html" class="image">
+														<img class="pic-1" alt="product-image-1"
+															src="../assets/img/programmes/p1.jpg">
+														<img class="pic-2" alt="product-image-2"
+															src="../assets/img/programmes/p11.jpg">
+													</a>
+													<div class="product-link">
+														<a href="AddProgrameEpisodes.html">
+															<i class="fa fa-plus-circle"></i>
+															<span>اضافة حلقة جديدة</span>
+														</a>
+														<a href="EditPrograme.html">
+															<i class="fas fa-pencil-square"></i>
+															<span>تعديل معلومات البرنامج</span>
+														</a>
+													</div>
+												</div>
+												<div class="product-content">
+													<h3 id="programeName" class="title"><a href="#">برنامج اغلبية
+															صامتة</a></h3>
+													<div class="price"><span id="programmeCategorie">اخبار</span></div>
+
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="col-md-6 col-lg-6 col-xl-4 col-sm-6">
+									<div class="card custom-card">
+										<div class="p-0 ht-100p">
+											<div class="product-grid">
+												<div class="product-image">
+													<a href="EditPrograme.html" class="image">
+														<img class="pic-1" alt="product-image-1"
+															src="../assets/img/programmes/p1.jpg">
+														<img class="pic-2" alt="product-image-2"
+															src="../assets/img/programmes/p11.jpg">
+													</a>
+													<div class="product-link">
+														<a href="AddProgrameEpisodes.html">
+															<i class="fa fa-plus-circle"></i>
+															<span>اضافة حلقة جديدة</span>
+														</a>
+														<a href="EditPrograme.html">
+															<i class="fas fa-pencil-square"></i>
+															<span>تعديل معلومات البرنامج</span>
+														</a>
+													</div>
+												</div>
+												<div class="product-content">
+													<h3 id="programeName" class="title"><a href="#">برنامج اغلبية
+															صامتة</a></h3>
+													<div class="price"><span id="programmeCategorie">اخبار</span></div>
+
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<nav>
+								<ul class="pagination justify-content-end">
+									<li class="page-item disabled"><a class="page-link" href="#">Prev</a></li>
+									<li class="page-item active"><a class="page-link" href="#">1</a></li>
+									<li class="page-item"><a class="page-link" href="#">2</a></li>
+									<li class="page-item"><a class="page-link" href="#">3</a></li>
+									<li class="page-item"><a class="page-link" href="#">4</a></li>
+									<li class="page-item"><a class="page-link" href="#">5</a></li>
+									<li class="page-item"><a class="page-link" href="#">Next</a></li>
+								</ul>
+							</nav>
+						</div>
+						<div class="col-md-4 col-lg-3 col-xl-3">
+
+							<div class="card custom-card">
+								<div class="card-body">
+									<div class="row row-sm">
+										<div class="col-sm-12">
+											<div class="input-group">
+												<input type="text" class="form-control"
+													placeholder="ابحث عن برنامج معين ...">
+												<span class="">
+													<button class="btn ripple btn-primary" type="button">بحث</button>
+												</span>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="row row-sm">
+								<div class="col-md-12 col-lg-12">
+									<div class="card custom-card">
+										<div class="card-header custom-card-header">
+											<h6 class="main-content-label mb-3">التصنيفات</h6>
+										</div>
+										<div class="card-body">
+											<div class="form-group">
+												<label class="form-label">التصنيفات</label>
+												<select name="beast" id="select-beast" class="form-control select2">
+													<option label="Select"></option>
+													<option value="1">اخبار</option>
+													<option value="2">رياضة</option>
+													<option value="3">منوع</option>
+													<option value="4">عاجل</option>
+												</select>
+											</div>
+											<button class="btn ripple btn-primary btn-block">تطبيق الفلتر</button>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="card custom-card">
+								<div class="card-body">
+									<div class="row row-sm">
+										<div class="col-sm-3">
+											<button class="btn ripple btn-primary" type="button" onclick="window.open('AddPrograme.html')">اضافة برنامج جديد</button>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!-- End Row -->
+
+				</div>
+			</div>
+		</div>
+		<!-- End Main Content-->
+
+		<!-- Main Footer-->
+		<div class="main-footer text-center">
+			<div class="container">
+				<div class="row row-sm">
+					<div class="col-md-12">
+						<span>حقوق النشر © 2022 <a href="javascript:void(0)">موقع قناة الجنوبية</a>. <a
+								href="https://www.spruko.com/"></a>كل الحقوق محفوظة.</span>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--End Footer-->
+
+
+	</div>
+	<!-- End Page -->
+
+
+
+	<!-- Back-to-top -->
+	<a href="#top" id="back-to-top"><i class="fe fe-arrow-up"></i></a>
+
+	<!-- Jquery js-->
+	<script src="../assets/plugins/jquery/jquery.min.js"></script>
+
+	<!-- Bootstrap js-->
+	<script src="../assets/plugins/bootstrap/js/popper.min.js"></script>
+	<script src="../assets/plugins/combotree/comboTreePlugin.js"></script>
+	<script src="../assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+
+
+	
+	<script src="../assets/js/select2.js"></script>
+
+	<!-- Select2 js-->
+	<script src="../assets/plugins/select2/js/select2.min.js"></script>
+
+	<!-- Perfect-scrollbar js -->
+	<script src="../assets/plugins/perfect-scrollbar/perfect-scrollbar.min.js"></script>
+
+	<!-- Sidemenu js -->
+	<script src="../assets/plugins/sidemenu/sidemenu.js"></script>
+
+	<!-- Sidebar js -->
+	<script src="../assets/plugins/sidebar/sidebar.js"></script>
+
+	<!-- Color Theme js -->
+	<script src="../assets/js/themeColors.js"></script>
+
+
+	<!-- Custom js -->
+	<script src="../assets/js/custom.js"></script>
+
+
+</body>
+
+</html>

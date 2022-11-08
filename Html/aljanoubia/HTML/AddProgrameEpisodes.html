@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" id="users">
+<html lang="ar" id="AddProgram">
 
 <head>
 
@@ -8,7 +8,7 @@
 
 
 	<!-- Title -->
-	<title>واجهة اضافة المستخدمين</title>
+	<title>حلقات البرنامج</title>
 
 	<!-- Bootstrap css-->
 	<link id="style" href="../assets/plugins/bootstrap/css/bootstrap.rtl.min.css" rel="stylesheet" />
@@ -25,6 +25,16 @@
 	<link href="../assets/plugins/web-fonts/icons.css" rel="stylesheet" />
 	<link href="../assets/plugins/web-fonts/font-awesome/font-awesome.min.css" rel="stylesheet">
 	<link href="../assets/plugins/web-fonts/plugin.css" rel="stylesheet" />
+	<!-- InternalFancy uploader css-->
+	<link href="../assets/plugins/fancyuploder/fancy_fileupload.css" rel="stylesheet" />
+	<!-- Mutipleselect css-->
+	<link rel="stylesheet" href="../assets/plugins/multipleselect/multiple-select.css">
+
+	<!-- Internal Quill css-->
+	<link href="../assets/plugins/quill/quill.snow.css" rel="stylesheet">
+	<link href="../assets/plugins/quill/quill.bubble.css" rel="stylesheet">
+	<!-- InternalFancy uploader css-->
+	<link href="../assets/plugins/fancyuploder/fancy_fileupload.css" rel="stylesheet" />
 
 	<!-- Style css-->
 	<link href="../assets/css/style.css" rel="stylesheet">
@@ -184,8 +194,10 @@
 								</a>
 								<ul class="nav-sub">
 									<li class="side-menu-label1"><a href="javascript:void(0)">الملفات الاساسية</a></li>
-									<li class="nav-sub-item"><a class="nav-sub-link" href="Users.html">المستخدمين</a></li>
-									<li class="nav-sub-item"><a class="nav-sub-link" href="Categorie.html">تصنيفات الاخبار</a></li>
+									<li class="nav-sub-item"><a class="nav-sub-link" href="Users.html">المستخدمين</a>
+									</li>
+									<li class="nav-sub-item"><a class="nav-sub-link" href="Categorie.html">تصنيفات
+											الاخبار</a></li>
 								</ul>
 							</li>
 
@@ -209,97 +221,152 @@
 						
 					</div>
 					<!-- End Page Header -->
+
 					<!-- Row -->
 					<div class="row row-sm">
-						<div class="col-lg-12">
-							<div class="card custom-card overflow-hidden">
-								<div class="card-body">
-									<div style="margin-bottom: 10px;">
-										<button class="btn ripple btn-primary pd-x-15 mg-r-5"
-											data-bs-target="#modalSave" data-bs-toggle="modal">اضافة مستخدم
-											جديد</button>
-									</div>
+						<div class="col-md-12 col-lg-12">
+							<div class="card custom-card">
+								<div class="card-header  border-bottom-0 pb-0">
 									<div>
-
+										<div class="d-flex">
+											<label class="main-content-label my-auto pt-2">جميع الحلقات</label>
+											<button class="btn ripple btn-primary pd-x-15 mg-r-5"
+											data-bs-target="#modalNew" data-bs-toggle="modal">اضافة حلقة جديدة
+											</button>
+										</div>
 									</div>
-									<div class="table-responsive">
-										<table id="exportexample"
-											class="table table-bordered border-t0 key-buttons text-nowrap w-100">
+								</div>
+								<div class="card-body">
+									<div class="row table-filter">
+										<div class="col-lg-3">
+											<div class="show-entries">
+												<span>عرض</span>
+												<select class="form-control select2 wd-50">
+													<option>5</option>
+													<option>10</option>
+													<option>15</option>
+													<option>20</option>
+												</select>
+												<span>الصفحات</span>
+											</div>
+										</div>
+										<div class="col-lg-9 d-lg-flex justify-content-end">
+											<div class="d-flex mt-4 me-4 mt-lg-0">
+												<div class="filter-group">
+													<input type="text" class="form-control rounded-end-0" placeholder="بحث">
+												</div>
+												<button type="button" class="btn btn-primary"><i class="fa fa-search"></i></button>
+											</div>
+											
+										</div>
+									</div>
+									<div class="table-responsive border border-bottom-0">
+										<table class="table mb-0 text-nowrap text-md-nowrap">
 											<thead>
-												<tr>
+												<tr class="border-bottom">
 													<th>المعرف</th>
-													<th>الاسم الاول</th>
-													<th>الاسم الاخير</th>
-													<th>اسم المستخدم</th>
-													<th>حالة المستخدم</th>
+													<th>رقم الحلقة</th>
+													<th>عنوان الحلقة</th>
+													<th>تفاصيل</th>
+													<th>حالة الحلقة</th>
 													<th>اجراء</th>
 												</tr>
 											</thead>
 											<tbody>
-												<tr>
-													<td>1</td>
-													<td>علي</td>
-													<td>محمد</td>
-													<td>علي محمد</td>
-													<td>فعال</td>
+												<tr class="border-bottom">
+													<th scope="row">1</th>
+													<td >1</td>
+													<td>الحلقة رقم 1</td>
+													<td>تفاصيل  تفاصيل تفاصيل</td>
+													<td><span class="status bg-success"></span> فعالة</td>
 													<td>
-														<a id="edit" class="btn btn-sm btn-primary">
-															<i class="fe fe-edit-2" data-bs-target="#modalEdit"
-																data-bs-toggle="modal"></i>
-														</a>
+														<div class="button-list">
+															<a href="#" class="btn" data-bs-target="#modalEdit" data-bs-toggle="modal"><i class="ti ti-pencil"></i></a>
+														</div>
 													</td>
 												</tr>
-												<tr>
+												<tr class="border-bottom">
+													<th scope="row">2</th>
 													<td>2</td>
-													<td>محمود</td>
-													<td>بشير</td>
-													<td>محمود بشير</td>
-													<td>فعال</td>
+													<td>الحلقة رقم 2</td>
+													<td>تفاصيل  تفاصيل تفاصيل</td>
+													<td><span class="status bg-success"></span> فعالة</td>
 													<td>
-														<a id="edit" class="btn btn-sm btn-primary">
-															<i class="fe fe-edit-2" data-bs-target="#modalEdit"
-																data-bs-toggle="modal"></i>
-														</a>
+														<div class="button-list">
+															<a href="#" class="btn" data-bs-target="#modalEdit" data-bs-toggle="modal"><i class="ti ti-pencil"></i></a>
+														</div>
 													</td>
 												</tr>
-												<tr>
+												<tr class="border-bottom">
+													<th scope="row">3</th>
 													<td>3</td>
-													<td>خالد </td>
-													<td>وليد</td>
-													<td>خالد وليد</td>
-													<td>فعال</td>
+													<td>الحلقة رقم 3</td>
+													<td>تفاصيل  تفاصيل تفاصيل</td>
+													<td><span class="status bg-success"></span> فعالة</td>
 													<td>
-														<a id="edit" class="btn btn-sm btn-primary">
-															<i class="fe fe-edit-2" data-bs-target="#modalEdit"
-																data-bs-toggle="modal"></i>
-														</a>
+														<div class="button-list">
+															<a href="#" class="btn" data-bs-target="#modalEdit" data-bs-toggle="modal"><i class="ti ti-pencil"></i></a>
+														</div>
 													</td>
 												</tr>
-
-												<tr>
+												<tr class="border-bottom">
+													<th scope="row">4</th>
 													<td>4</td>
-													<td>عبدالله </td>
-													<td>وليد</td>
-													<td>عبدالله وليد</td>
-													<td>فعال</td>
+													<td>الحلقة رقم 4</td>
+													<td>تفاصيل  تفاصيل تفاصيل</td>
+													<td><span class="status bg-success"></span> فعالة</td>
 													<td>
-														<a id="edit" class="btn btn-sm btn-primary">
-															<i class="fe fe-edit-2" data-bs-target="#modalEdit"
-																data-bs-toggle="modal"></i>
-														</a>
+														<div class="button-list">
+															<a href="#" class="btn" data-bs-target="#modalEdit" data-bs-toggle="modal"><i class="ti ti-pencil"></i></a>
+														</div>
 													</td>
 												</tr>
-
-
+												<tr class="border-bottom">
+													<th scope="row">5</th>
+													<td>5</td>
+													<td>الحلقة رقم 5</td>
+													<td>تفاصيل  تفاصيل تفاصيل</td>
+													<td><span class="status bg-success"></span> فعالة</td>
+													<td>
+														<div class="button-list">
+															<a href="#" class="btn" data-bs-target="#modalEdit" data-bs-toggle="modal"><i class="ti ti-pencil"></i></a>
+														</div>
+													</td>
+												</tr>
+												<tr class="border-bottom">
+													<th scope="row">6</th>
+													<td>6</td>
+													<td>الحلقة رقم 6</td>
+													<td>تفاصيل  تفاصيل تفاصيل</td>
+													<td><span class="status bg-danger"></span> غير فعالة</td>
+													<td>
+														<div class="button-list">
+															<a href="#" class="btn" data-bs-target="#modalEdit" data-bs-toggle="modal"><i class="ti ti-pencil"></i></a>
+														</div>
+													</td>
+												</tr>
+												
+												
+												
 											</tbody>
 										</table>
 									</div>
+									<nav class="mt-3">
+										<ul class="pagination justify-content-end">
+											<li class="page-item disabled"><a class="page-link" href="#">Prev</a></li>
+											<li class="page-item active"><a class="page-link" href="#">1</a></li>
+											<li class="page-item"><a class="page-link" href="#">2</a></li>
+											<li class="page-item"><a class="page-link" href="#">3</a></li>
+											<li class="page-item"><a class="page-link" href="#">4</a></li>
+											<li class="page-item"><a class="page-link" href="#">5</a></li>
+											<li class="page-item"><a class="page-link" href="#">Next</a></li>
+										</ul>
+									</nav>
 								</div>
 							</div>
 						</div>
 					</div>
 					<!-- End Row -->
-
 				</div>
 			</div>
 		</div>
@@ -321,87 +388,99 @@
 
 	</div>
 	<!-- End Page -->
-	<!-- Form Modal -->
-	<div class="modal" id="modalSave">
-		<div class="modal-dialog wd-xl-400" role="document">
-			<div class="modal-content">
-				<div class="modal-body pd-20 pd-sm-40">
-					<button aria-label="Close" class="close pos-absolute t-15 r-20 tx-26" data-bs-dismiss="modal"
-						type="button"><span aria-hidden="true">&times;</span></button>
-					<h5 class="modal-title mb-4 text-center">انشاء مستخدم جديد</h5>
+	<!-- Large Modal -->
+	<div class="modal" id="modalNew">
+		<div class="modal-dialog modal-lg" role="document">
+			<div class="modal-content modal-content-demo">
+				<div class="modal-header">
+					<h6 class="modal-title">اضافة حلقة جديدة</h6><button aria-label="Close" class="btn-close" data-bs-dismiss="modal" type="button"></button>
+				</div>
+				<div class="modal-body">
 					<div class="form-group">
-						<input id="txtFirstName" class="form-control" placeholder="الاسم الاول" type="text">
+						<input id="episode_no" class="form-control" placeholder="رقم الحلقة" type="text" >
 					</div>
 					<div class="form-group">
-						<input id="txtLastName" class="form-control" placeholder="الاسم الاخير" type="text">
+						<input id="title" class="form-control" placeholder="عنوان الحلقة" type="text">
 					</div>
 					<div class="form-group">
-						<input id="txtUserName" class="form-control" placeholder="اسم المستخدم" type="text">
+						<input id="episode_path" class="form-control" placeholder="رابط الحلقة" type="text">
 					</div>
 					<div class="form-group">
-						<input id="txtPassword" class="form-control" placeholder="كلمة السر" type="password">
+						<iframe width="560" height="315" src="https://www.youtube.com/embed/SZtO_HAYEkY">
+						</iframe>
 					</div>
+					
 					<div class="form-group">
-						<input type="text" class="form-control" id="justAnInputBox" placeholder="اختيار صلاحية المستخدم"
-							autocomplete="off" />
+						<textarea id="description" class="form-control" name="example-textarea-input"
+											rows="14" placeholder="كتابة تفاصيل الحلقة" data-gramm="false"
+											wt-ignore-input="true"
+											data-quillbot-element="Cv0xpZYKS7ykC71UAxdPs"></textarea>
 					</div>
 					<div class="form-group">
 						<select id="active" class="form-control select2" Required>
-							<option value="" selected hidden>اختيار حالة المستخدم</option>
-							<option value="0">فعال</option>
-							<option value="1">غير فعال</option>
+							<option value="" selected hidden>اختيار حالة الحلقة</option>
+							<option value="0">فعالة</option>
+							<option value="1">غير فعالة</option>
 						</select>
 					</div>
 
+				</div>
+				<div class="modal-footer">
 					<button class="btn ripple btn-primary" type="button">حفظ</button>
 					<button class="btn ripple btn-secondary" data-bs-dismiss="modal" type="button">اغلاق</button>
 				</div>
 			</div>
 		</div>
 	</div>
-	<!-- End Form Modal -->
-	<!-- Form Modal -->
+	<!--End Large Modal -->
+    	<!-- Large Modal -->
 	<div class="modal" id="modalEdit">
-		<div class="modal-dialog wd-xl-400" role="document">
-			<div class="modal-content">
-				<div class="modal-body pd-20 pd-sm-40">
-					<button aria-label="Close" class="close pos-absolute t-15 r-20 tx-26" data-bs-dismiss="modal"
-						type="button"><span aria-hidden="true">&times;</span></button>
-					<h5 class="modal-title mb-4 text-center">تعديل مستخدم</h5>
+		<div class="modal-dialog modal-lg" role="document">
+			<div class="modal-content modal-content-demo">
+				<div class="modal-header">
+					<h6 class="modal-title">تعديل معلومات الحلقة</h6><button aria-label="Close" class="btn-close" data-bs-dismiss="modal" type="button"></button>
+				</div>
+				<div class="modal-body">
 					<div class="form-group">
-						<input id="txtID" class="form-control" placeholder="المعرف" type="text" disabled>
+						<input id="ID" class="form-control" placeholder="المعرف" type="text" disabled>
 					</div>
 					<div class="form-group">
-						<input id="txtFirstName2" class="form-control" placeholder="الاسم الاول" type="text">
+						<input id="episode_no2" class="form-control" placeholder="رقم الحلقة" type="text" >
 					</div>
 					<div class="form-group">
-						<input id="txtLastName2" class="form-control" placeholder="الاسم الاخير" type="text">
+						<input id="title2" class="form-control" placeholder="عنوان الحلقة" type="text">
 					</div>
 					<div class="form-group">
-						<input id="txtUserName2" class="form-control" placeholder="اسم المستخدم" type="text">
+						<input id="episode_path2" class="form-control" placeholder="رابط الحلقة" type="text">
 					</div>
 					<div class="form-group">
-						<input id="txtPassword2" class="form-control" placeholder="كلمة السر" type="password">
+						<iframe width="560" height="315" src="https://www.youtube.com/embed/SZtO_HAYEkY">
+						</iframe>
+					</div>
+					
+					<div class="form-group">
+						<textarea id="description2" class="form-control" name="example-textarea-input"
+											rows="14" placeholder="كتابة تفاصيل الحلقة" data-gramm="false"
+											wt-ignore-input="true"
+											data-quillbot-element="Cv0xpZYKS7ykC71UAxdPs"></textarea>
 					</div>
 					<div class="form-group">
-						<input type="text" class="form-control" id="justAnInputBox2"
-							placeholder="اختيار صلاحية المستخدم" autocomplete="off" />
-					</div>
-					<div class="form-group">
-						<select id="active2" class="form-control" Required>
-							<option value="" selected hidden>اختيار حالة المستخدم</option>
-							<option value="0">فعال</option>
-							<option value="1">غير فعال</option>
+						<select id="active2" class="form-control select2" Required>
+							<option value="" selected hidden>اختيار حالة الحلقة</option>
+							<option value="0">فعالة</option>
+							<option value="1">غير فعالة</option>
 						</select>
 					</div>
 
-					<button class="btn ripple btn-primary" type="button">حفظ</button>
+				</div>
+				<div class="modal-footer">
+					<button class="btn ripple btn-primary" type="button">تعديل</button>
 					<button class="btn ripple btn-secondary" data-bs-dismiss="modal" type="button">اغلاق</button>
 				</div>
 			</div>
 		</div>
 	</div>
-	<!-- End Form Modal -->
+	<!--End Large Modal -->
 
 
 	<!-- Back-to-top -->
@@ -416,21 +495,14 @@
 	<script src="../assets/plugins/bootstrap/js/bootstrap.min.js"></script>
 
 
-	<!-- Internal Data Table js -->
-	<script src="../assets/plugins/datatable/js/jquery.dataTables.min.js"></script>
-	<script src="../assets/plugins/datatable/js/dataTables.bootstrap5.js"></script>
-	<script src="../assets/plugins/datatable/js/dataTables.buttons.min.js"></script>
-	<script src="../assets/plugins/datatable/js/buttons.bootstrap5.min.js"></script>
-	<script src="../assets/plugins/datatable/js/jszip.min.js"></script>
-	<script src="../assets/plugins/datatable/pdfmake/pdfmake.min.js"></script>
-	<script src="../assets/plugins/datatable/pdfmake/vfs_fonts.js"></script>
-	<script src="../assets/plugins/datatable/js/buttons.html5.min.js"></script>
-	<script src="../assets/plugins/datatable/js/buttons.print.min.js"></script>
-	<script src="../assets/plugins/datatable/js/buttons.colVis.min.js"></script>
-	<script src="../assets/plugins/datatable/dataTables.responsive.min.js"></script>
-	<script src="../assets/plugins/datatable/responsive.bootstrap5.min.js"></script>
-	<script src="../assets/js/table-data.js"></script>
-	<script src="../assets/js/select2.js"></script>
+
+	<!--Internal Fancy uploader js-->
+	<script src="../assets/plugins/fancyuploder/jquery.ui.widget.js"></script>
+	<script src="../assets/plugins/fancyuploder/jquery.fileupload.js"></script>
+	<script src="../assets/plugins/fancyuploder/jquery.iframe-transport.js"></script>
+	<script src="../assets/plugins/fancyuploder/jquery.fancy-fileupload.js"></script>
+	<script src="../assets/plugins/fancyuploder/fancy-uploader.js"></script>
+
 	<!-- Peity js-->
 	<script src="../assets/plugins/peity/jquery.peity.min.js"></script>
 
@@ -446,14 +518,23 @@
 
 	<!-- Sidebar js -->
 	<script src="../assets/plugins/sidebar/sidebar.js"></script>
-
+	<!-- Internal Blog Post js-->
+	<script src="../assets/js/blog-post.js"></script>
 	<!-- Color Theme js -->
 	<script src="../assets/js/themeColors.js"></script>
-
+	<!-- Internal Quill js-->
+	<script src="../assets/plugins/quill/quill.min.js"></script>
 
 	<!-- Custom js -->
 	<script src="../assets/js/custom.js"></script>
-	<script src="../assets/js/pages/users.js"></script>
+
+
+
+
+
+
+
+
 
 
 </body>

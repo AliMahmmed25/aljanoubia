@@ -6731,11 +6731,14 @@ div.dtr-modal div.dtr-modal-content {
     padding: 9px 19px;
     line-height: 1.462;
     border-top: 0;
+    font-size:small;
+
 }
 
 .table thead th {
     vertical-align: bottom;
     border-bottom: 1px solid #e8e8f7 !important;
+    font-style:normal;
 }
 
 .table tbody+tbody {

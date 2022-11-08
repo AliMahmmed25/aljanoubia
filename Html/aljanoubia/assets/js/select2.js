@@ -1,14 +1,14 @@
 $(function() {
 	
 	$('.select2').select2({
-		placeholder: 'Choose one',
+		placeholder: 'اختيار',
 		searchInputPlaceholder: 'Search',
 		minimumResultsForSearch: Infinity,
 		width: '100%'
 	});
 
 	$('.select2-with-search').select2({
-		placeholder: 'Choose one',
+		placeholder: 'اختيار',
 		searchInputPlaceholder: 'Search',
 		width: '100%'
 	});
