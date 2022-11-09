@@ -106,13 +106,13 @@ License        :   Licensed under ThemeForest License
 /* ########## BOOTSTRAP OVERRIDES ########## */
 /* ###### Bootstrap ###### */
 :root {
-    --primary-bg-color: #6259ca;
-    --primary-bg-hover: #403fad;
+    --primary-bg-color: #2C7873;
+    --primary-bg-hover: #6FB98F;
     --primary-transparentcolor: rgba(98, 89, 202, 0.16);
     --primary-bg-border: #6259ca;
-    --dark-theme: #0e0e23;
-    --dark-body: #24243e;
-    --dark-border: rgba(255, 255, 255, 0.15);
+    --dark-theme: #021C1E;
+    --dark-body: #004445;
+    --dark-border: #6FB98F;
     --dark-color: #d0d0e2;
     --dark-primary: #6259ca;
     --indigo: $indigo;
@@ -139,8 +139,13 @@ License        :   Licensed under ThemeForest License
     --breakpoint-md: 768px;
     --breakpoint-lg: 992px;
     --breakpoint-xl: 1200px;
-    --font-family-sans-serif: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    --font-family-sans-serif: Cairo;
     --font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+    
+}
+@font-face {
+    font-family: Cairo;
+    src: url(Fonts/Cairo-VariableFont_wght.ttf) format(truetype);
 }
 
 * {
@@ -153,7 +158,7 @@ License        :   Licensed under ThemeForest License
 }
 
 html {
-    font-family: sans-serif;
+    font-family: 'Cairo';
     line-height: 1.15;
     -webkit-text-size-adjust: 100%;
     -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
@@ -174,13 +179,12 @@ section {
 
 body {
     margin: 0;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-    font-size: 0.875rem;
+    font-size: 18px;
     font-weight: 400;
     line-height: 1.5;
     text-align: left;
     background-color: #ffffff;
-    font-family: "Roboto", sans-serif !important;
+    font-family: "Cairo", sans-serif !important;
     background: #eaedf7;
     color: #1d212f;
     direction: ltr;
@@ -324,7 +328,7 @@ pre,
 code,
 kbd,
 samp {
-    font-family: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+    font-family: "Cairo", sans-serif;
     font-size: 1em;
 }
 
@@ -512,7 +516,7 @@ h6,
 
 h1,
 .h1 {
-    font-size: 2.1875rem;
+    font-size: 3.1875rem;
 }
 
 h2,
@@ -1084,7 +1088,7 @@ pre code {
 /* ###### Badge ###### */
 .badge {
     font-weight: 500;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    font-family: "Cairo", sans-serif;
     padding: 4px 6px 5px;
     display: inline-block;
     font-size: 75%;
@@ -1294,7 +1298,7 @@ a.bg-dark.focus {
 .breadcrumb-style3 .breadcrumb-item {
     font-size: 15px;
     font-weight: 500;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    font-family: "Cairo", sans-serif;
     letter-spacing: 0.5px;
 }
 
@@ -1451,7 +1455,7 @@ a.bg-dark.focus {
     background-color: transparent;
     border: 1px solid transparent;
     padding: 0.375rem 0.75rem;
-    font-size: 0.875rem;
+    font-size: 1.875rem;
     line-height: 1.5;
     border-radius: 3px;
     transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
@@ -4039,7 +4043,7 @@ fieldset:disabled a.btn {
     width: 100%;
     height: calc(1.5em + 0.75rem + 2px);
     padding: 0.175rem 2.25rem 0.175rem 0.75rem;
-    font-size: 0.875rem;
+    font-size: 1.875rem;
     font-weight: 400;
     line-height: 1.5;
     color: #a8afc7;
@@ -6268,7 +6272,7 @@ div.dtr-modal div.dtr-modal-content {
     z-index: 999;
     display: block;
     max-width: 276px;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    font-family: "Cairo", sans-serif;
     font-style: normal;
     font-weight: 400;
     line-height: 1.5;
@@ -7280,7 +7284,7 @@ div.dataTables_wrapper div.dataTables_length select {
     z-index: 1070;
     display: block;
     margin: 0;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    font-family: "Cairo", sans-serif;
     font-style: normal;
     font-weight: 400;
     line-height: 1.5;
@@ -23791,8 +23795,8 @@ body.rtl {
     }
 
     .rtl .main-content .page-header .btn.btn-list {
-        padding-left: inherit;
-        padding-right: 0;
+        padding-right: inherit;
+        padding-left: 0;
         text-align: right;
     }
 }
@@ -26602,7 +26606,7 @@ body.rtl {
 .main-logo {
     font-weight: 700;
     font-size: 28px;
-    font-family: "Poppins", sans-serif;
+    font-family: "Cairo", sans-serif;
     text-transform: lowercase;
     letter-spacing: -1px;
     display: flex;
@@ -26733,7 +26737,7 @@ body.rtl {
 .main-header-menu .nav-item>.nav-link.with-sub::after {
     content: "\f3d0";
     display: inline-block;
-    font-family: "Ionicons";
+    font-family: "Cairo", sans-serif;
     font-size: 12px;
     font-weight: 400;
     margin-left: auto;
@@ -27016,7 +27020,7 @@ body.rtl {
 
 .main-header-right .btn-buy {
     text-transform: uppercase;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    font-family: "Cairo", sans-serif;
     font-size: 11px;
     font-weight: 500;
     color: #ffffff;
@@ -28278,7 +28282,7 @@ body.rtl {
 
 .main-iconbar-body .nav-link.with-sub::after {
     content: "\f3d0";
-    font-family: "Ionicons";
+    font-family: "Cairo", sans-serif;
     font-size: 11px;
     font-weight: 400;
     display: inline-block;
@@ -28698,7 +28702,7 @@ body.rtl {
     }
 
     .main-navbar .nav-sub-link.sub-with-sub::after {
-        font-family: "Ionicons";
+        font-family: "Cairo", sans-serif;
         font-weight: 400;
         display: inline-block;
         position: relative;
@@ -28952,7 +28956,7 @@ body.rtl {
 
     .horizontalmenu .main-body-1 .nav-sub .nav-sub-link:before {
         content: "\e048";
-        font-family: "typicons";
+        font-family: "Cairo", sans-serif;
         font-style: normal;
         font-weight: normal;
         text-decoration: inherit;
@@ -29428,7 +29432,7 @@ body.rtl {
     align-items: center;
     padding: 4px;
     font-weight: 400;
-    font-size: 14px;
+    font-size: 18px;
     color: rgba(255, 255, 255, 0.4);
 }
 
@@ -29463,7 +29467,7 @@ body.rtl {
 
 .main-sidebar-body .nav-sub .nav-sub-link:before {
     content: "\e048";
-    font-family: "typicons";
+    font-family: "Cairo", sans-serif;
     font-style: normal;
     font-weight: normal;
     text-decoration: inherit;
@@ -29508,7 +29512,7 @@ body.rtl {
 
 .main-sidebar-body .nav-sub-link.with-sub::after {
     content: "\f3d0";
-    font-family: "Ionicons";
+    font-family: "Cairo", sans-serif;
     font-size: 12px;
     font-weight: 400;
     display: inline-block;
@@ -30865,7 +30869,7 @@ body.rtl {
 .ui-datepicker .ui-datepicker-header .ui-datepicker-next::before,
 .ui-datepicker .ui-datepicker-header .ui-datepicker-prev::before {
     font-size: 12px;
-    font-family: "Ionicons";
+    font-family: "Cairo", sans-serif;
     position: absolute;
     top: 10px;
     text-indent: 0;
@@ -31052,8 +31056,7 @@ body.rtl {
 }
 
 .picker-item {
-    font-family: "Archivo", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-}
+    font-family: "Cairo", sans-serif;}
 
 .picker-picked {
     font-weight: 500;
@@ -31112,7 +31115,7 @@ body.rtl {
 
 .datetimepicker table th.prev span::before,
 .datetimepicker table th.next span::before {
-    font-family: "Ionicons";
+    font-family: "Cairo", sans-serif;
     position: absolute;
     top: 50%;
     font-size: 16px;
@@ -31197,7 +31200,7 @@ body.rtl {
 
 .main-datetimepicker>.datepicker_header a:nth-child(2)::before,
 .main-datetimepicker>.datepicker_header a:last-child::before {
-    font-family: "Ionicons";
+    font-family: "Cairo", sans-serif;
     position: absolute;
     top: 50%;
     line-height: 0;
@@ -31216,7 +31219,7 @@ body.rtl {
 }
 
 .main-datetimepicker>.datepicker_header span {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    font-family: "Cairo", sans-serif;
     text-transform: uppercase;
 }
 
@@ -31238,7 +31241,7 @@ body.rtl {
     width: 230px;
     border-width: 0;
     border-radius: 0;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    font-family: "Cairo", sans-serif;
     padding: 5px;
     float: none;
     margin: 0;
@@ -31323,7 +31326,7 @@ body.rtl {
 }
 
 .jqvmap-pin {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    font-family: "Cairo", sans-serif;
     cursor: default;
     pointer-events: none;
 }
@@ -35543,7 +35546,7 @@ textarea.parsley-success:focus {
 .main-invoice-list .media-body p {
     margin-bottom: 0;
     font-size: 11px;
-    font-family: Arial, sans-serif;
+    font-family: "Cairo", sans-serif;
     color: #3b4863;
 }
 
@@ -37810,7 +37813,7 @@ table.dataTable thead .sorting_asc_disabled:after,
     display: block;
     margin-left: auto;
     font-weight: 600;
-    font-family: "Archivo", Arial, sans-serif;
+    font-family: "Cairo", sans-serif;
     color: #1c273c;
 }
 
@@ -60055,7 +60058,7 @@ a.bg-light.focus {
 }
 
 .tx-sserif {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    font-family: "Cairo", sans-serif;
 }
 
 .tx-roboto {
@@ -68911,7 +68914,7 @@ a.text-dark:focus {
 
 .landing-page .slick-prev:before,
 .landing-page .slick-next:before {
-    font-family: "feather";
+    font-family: "Cairo", sans-serif;
     font-size: 20px;
     padding: 10px;
     line-height: 1;
@@ -73819,7 +73822,7 @@ input[type=search]::-webkit-search-cancel-button {
     padding: 0;
     position: relative;
     min-height: 50px;
-    margin: 1.8rem 0 1.5rem 0;
+    margin: 6.8rem 0 1.5rem 0;
     border-radius: 7px;
 }
 

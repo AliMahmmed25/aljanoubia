@@ -16,10 +16,10 @@ $(function () {
 	$(document).on('click', '#mainSidebarToggle', function (event) {
 		event.preventDefault();
 		if (window.matchMedia('(min-width: 992px)').matches) {
-			$('body.leftmenu').toggleClass('main-sidebar-hide');
+			$('body.rightmenu').toggleClass('main-sidebar-hide');
 		} else {
-			$('body.leftmenu').toggleClass('main-sidebar-show');
-			$('body.leftmenu').removeClass('main-sidebar-hide');
+			$('body.rightmenu').toggleClass('main-sidebar-show');
+			$('body.rightmenu').removeClass('main-sidebar-hide');
 		}
 	});
 
@@ -249,9 +249,7 @@ $('.main-menu').animate({
 
 let slideLeft = document.querySelector(".slide-left");
 let slideRight = document.querySelector(".slide-right");
-slideLeft.addEventListener("click", () => {
-slideClick()
-}, true)
+
 slideRight.addEventListener("click", () => { slideClick() }, true)
 
 function slideClick() {

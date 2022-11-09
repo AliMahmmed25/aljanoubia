@@ -8,13 +8,13 @@
 
 
  :root {
-    --ct-bg: rgb(48, 47, 47);
+    --ct-bg: rgb(39, 75, 72);
     --ct-btn-hover: #242323;
-    --ct-btn-active: rgb(22, 22, 22);
-    --ct-btn-color: rgb(26, 25, 25);
-    --ct-border-color: #141414;
+    --ct-btn-active: rgb(248, 245, 245);
+    --ct-btn-color: rgb(255, 254, 254);
+    --ct-border-color: #faf4f4;
     --ct-border-radius: 5px;
-    --ct-tree-hover: #1b1b1b;
+    --ct-tree-hover: #ffffff;
     --ct-selection: #6259ca;
     --ct-padding: 10px;
 }
