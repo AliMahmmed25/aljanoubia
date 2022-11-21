@@ -7,21 +7,48 @@
 </head>
 <body>
 	<div class="box">
-		<form autocomplete="off">
+		<form autocomplete="off" action="" onsubmit="login()" id="form_login">
 			<h2>واجهة تسجيل الدخول</h2>
 			<div class="inputBox">
-				<input type="text" required="required">
+				<input type="text" id="username" required="required">
 				<span>اسم المستخدم</span>
 				<i></i>
 			</div>
 			<div class="inputBox">
-				<input type="password" required="required">
+				<input type="password" id="password" required="required">
 				<span>كلمة السر</span>
 				<i></i>
 			</div>
 			
-			<input type="submit" value="تسجيل دخول">
+			<input type="submit"  value="تسجيل دخول">
 		</form>
 	</div>
+	<script>
+
+function login(){
+	var username = document.getElementById("username").value;
+	var password = document.getElementById("password").value;
+var myHeaders = new Headers();
+myHeaders.append("Access-Control-Request-Method", "*/*");
+myHeaders.append("Content-Type", "application/json");
+
+var raw = JSON.stringify({
+  "username": username,
+  "password": password
+});
+
+var requestOptions = {
+  method: 'POST',
+  headers: myHeaders,
+  body: raw,
+};
+fetch("http://sadco48-001-site3.htempurl.com/api/v1/User/Login", requestOptions)
+  .then(response => response.text())
+  .then(result => alert(result))
+  .catch(error => alert(error));
+
+}
+
+	</script>
 </body>
 </html>
