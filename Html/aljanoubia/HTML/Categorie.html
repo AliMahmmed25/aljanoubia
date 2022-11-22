@@ -393,69 +393,70 @@
 
 		});
 		function get_table() {
+			var data_response;
+			var myHeaders = new Headers();
+			myHeaders.append("Authorization", "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoiMSIsImh0dHA6Ly9zY2hlbWFzLnhtbHNvYXAub3JnL3dzLzIwMDUvMDUvaWRlbnRpdHkvY2xhaW1zL25hbWVpZGVudGlmaWVyIjoiMSIsImp0aSI6ImI4MGIwNTliLWU5NjctNGJmZC1iOTc3LWFjMDFkOTJiNGVlZiIsImV4cCI6MTY3NzA2MjEyNSwiaXNzIjoiaHR0cHM6Ly9sb2NhbGhvc3Q6NDQzOTMiLCJhdWQiOiJodHRwczovL2xvY2FsaG9zdDo0NDM5MyJ9.rjLKfGp2OAbejw6M1Lidjg0BneO1wLfXR6E2NPMy7Cg");
 
+			var requestOptions = {
+				method: 'GET',
+				headers: myHeaders,
+				redirect: 'follow'
+			};
 
-			tableData = $("#exportexample").dataTable({
-				"processing": false,
-				"serverSide": true,
-				"ajax": {
-					"url": `http://www.aljanubiachannel.somee.com/api/v1/Categorie/GetAll`,
-					"method": "GET",
-					"headers": {
-						"Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoiMSIsImh0dHA6Ly9zY2hlbWFzLnhtbHNvYXAub3JnL3dzLzIwMDUvMDUvaWRlbnRpdHkvY2xhaW1zL25hbWVpZGVudGlmaWVyIjoiMSIsImp0aSI6ImI4MGIwNTliLWU5NjctNGJmZC1iOTc3LWFjMDFkOTJiNGVlZiIsImV4cCI6MTY3NzA2MjEyNSwiaXNzIjoiaHR0cHM6Ly9sb2NhbGhvc3Q6NDQzOTMiLCJhdWQiOiJodHRwczovL2xvY2FsaG9zdDo0NDM5MyJ9.rjLKfGp2OAbejw6M1Lidjg0BneO1wLfXR6E2NPMy7Cg"
-					},
+			fetch('http://www.aljanubiachannel.somee.com/api/v1/Categorie/GetAll', requestOptions)
+				.then(response => response.json())
+				.then(response => {
+					data_response = { data: response };
+					console.log(data_response);
 
-				},
-				"drawCallback": function (settings) { 
-					var response = settings.json;
-					console.log("response");
-				},"dataSrc": function (d) {
-					console.log(d);
-					return d
-				},
-				"columns": [
-					{ "data": "id" },
-					{ "data": "name" },
-					{"data": "is_active",
-						render: function (data, type, row, meta) {
+					tableData = $("#exportexample").dataTable({
+						"data":response,
+						"columns": [
+							{ "data": "id" },
+							{ "data": "name" },
+							{
+								"data": "is_active",
+								render: function (data, type, row, meta) {
 
-							if (data == true) {
-								data = " فعال";
-								return data;
+									if (data == true) {
+										data = " فعال";
+										return data;
 
-							} else {
-								data = "غير فعال";
-								return data;
+									} else {
+										data = "غير فعال";
+										return data;
+									}
+									data;
+								}
+							},
+							{
+								"data": "id",
+								render: function (data, type, row, meta) {
+									return `<div class="btn-group" role="group" aria-label="Basic example">
+								  <button class="btn btn-light" onclick="EditView(${meta.row})"><i class="fe fe-edit-2"></i></button>
+								</div>`
+									data;
+								}
 							}
-							data;
-						}
-					},
-					{
-						"data": "id",
-						render: function (data, type, row, meta) {
-							return `<div class="btn-group" role="group" aria-label="Basic example">
-                                                  <button class="btn btn-light" onclick="EditView(${meta.row})"><i class="fe fe-edit-2"></i></button>
-                                                </div>`
-							data;
-						}
-					}
-				],
-				"lengthChange": true,
-				"language": {
-					"searchPlaceholder": 'ابحث هنا ...',
-					"sSearch": '',
-					"lengthMenu": '_MENU_ عناصر/صفحة',
-				},
-				
-				buttons: ['copy', 'excel', 'pdfHtml5', 'print', 'colvis'],
-				// "ordering": false,
-				// "paging": true,
-				// "searching": false,
-				// "pagingType": "simple_numbers",
-				"pageLength": 10
-			});
+						],
+						"lengthChange": true,
+						"language": {
+							"searchPlaceholder": 'ابحث هنا ...',
+							"sSearch": '',
+							"lengthMenu": '_MENU_ عناصر/صفحة',
+						},
+
+						buttons: ['copy', 'excel', 'pdfHtml5', 'print', 'colvis'],
+						"ordering": false,
+						"paging": true,
+						"searching": true,
+						"pagingType": "simple_numbers",
+						"pageLength": 10
+					});
 
 
+				})
+				.catch(err => console.log("ERROR!: ", err));
 
 		}
 		function EditView(id) {
