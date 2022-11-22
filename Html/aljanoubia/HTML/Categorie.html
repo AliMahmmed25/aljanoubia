@@ -65,8 +65,7 @@
 				</div>
 				<div class="main-header-center">
 					<div class="responsive-logo">
-						<a href="#"><img src="../assets/img/brand/aljanoubia.png" class="mobile-logo"
-								alt="logo"></a>
+						<a href="#"><img src="../assets/img/brand/aljanoubia.png" class="mobile-logo" alt="logo"></a>
 						<a href="#"><img src="../assets/img/brand/aljanoubia.png" class="mobile-logo-dark"
 								alt="logo"></a>
 					</div>
@@ -215,52 +214,8 @@
 													<th>اجراء</th>
 												</tr>
 											</thead>
-											<tbody>
-												<tr>
-													<td>1</td>
-													<td>اخبار</td>
-													<td>فعال</td>
-													<td>
-														<a id="edit" class="btn btn-sm btn-primary">
-															<i class="fe fe-edit-2" data-bs-target="#modalEdit"
-																data-bs-toggle="modal"></i>
-														</a>
-													</td>
-												</tr>
-												<tr>
-													<td>2</td>
-													<td>رياضة</td>
-													<td>فعال</td>
-													<td>
-														<a id="edit" class="btn btn-sm btn-primary">
-															<i class="fe fe-edit-2" data-bs-target="#modalEdit"
-																data-bs-toggle="modal"></i>
-														</a>
-													</td>
-												</tr>
-												<tr>
-													<td>3</td>
-													<td>منوع </td>
-													<td>فعال</td>
-													<td>
-														<a id="edit" class="btn btn-sm btn-primary">
-															<i class="fe fe-edit-2" data-bs-target="#modalEdit"
-																data-bs-toggle="modal"></i>
-														</a>
-													</td>
-												</tr>
+											<tbody id="data_body">
 
-												<tr>
-													<td>4</td>
-													<td>عاجل</td>
-													<td>فعال</td>
-													<td>
-														<a id="edit" class="btn btn-sm btn-primary">
-															<i class="fe fe-edit-2" data-bs-target="#modalEdit"
-																data-bs-toggle="modal"></i>
-														</a>
-													</td>
-												</tr>
 
 
 											</tbody>
@@ -399,6 +354,115 @@
 	<!-- Custom js -->
 	<script src="../assets/js/custom.js"></script>
 
+
+	<script>
+
+
+		fillTable = () => {
+			var myHeaders = new Headers();
+			myHeaders.append("Authorization", "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoiMSIsImh0dHA6Ly9zY2hlbWFzLnhtbHNvYXAub3JnL3dzLzIwMDUvMDUvaWRlbnRpdHkvY2xhaW1zL25hbWVpZGVudGlmaWVyIjoiMSIsImp0aSI6ImI4MGIwNTliLWU5NjctNGJmZC1iOTc3LWFjMDFkOTJiNGVlZiIsImV4cCI6MTY3NzA2MjEyNSwiaXNzIjoiaHR0cHM6Ly9sb2NhbGhvc3Q6NDQzOTMiLCJhdWQiOiJodHRwczovL2xvY2FsaG9zdDo0NDM5MyJ9.rjLKfGp2OAbejw6M1Lidjg0BneO1wLfXR6E2NPMy7Cg");
+
+			var requestOptions = {
+				method: 'GET',
+				headers: myHeaders,
+				redirect: 'follow'
+			};
+
+			fetch('http://www.aljanubiachannel.somee.com/api/v1/Categorie/GetAll', requestOptions)
+				.then(response => response.json())
+				.then(data => {
+					let html = '';
+					for (i = 0; i < data.length; i++) {
+						html += '<tr>' +
+							'<td class="tdUsername pv3 w-35 pr3 bb b--black-20">' + data[i].id + '</td>' +
+							'<td class="tdUsername pv3 w-35 pr3 bb b--black-20">' + data[i].name + '</td>' +
+							'<td class="tdPassword pv3 w-35 pr3 bb b--black-20">' + data[i].is_active + '</td>' +
+							'<td><a id="edit" class="btn btn-sm btn-primary"><i class="fe fe-edit-2" data-bs-target="#modalEdit"' +
+							'data-bs-toggle="modal"></i></a></td>' +
+							'</tr>'
+					}
+					$('#data_body').html(html);
+				})
+				.catch(err => console.log("ERROR!: ", err))
+		}
+
+
+		$(document).ready(function () {
+			//fillTable();
+			get_table();
+
+		});
+		function get_table() {
+
+
+			tableData = $("#exportexample").dataTable({
+				"processing": false,
+				"serverSide": true,
+				"ajax": {
+					"url": `http://www.aljanubiachannel.somee.com/api/v1/Categorie/GetAll`,
+					"method": "GET",
+					"headers": {
+						"Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoiMSIsImh0dHA6Ly9zY2hlbWFzLnhtbHNvYXAub3JnL3dzLzIwMDUvMDUvaWRlbnRpdHkvY2xhaW1zL25hbWVpZGVudGlmaWVyIjoiMSIsImp0aSI6ImI4MGIwNTliLWU5NjctNGJmZC1iOTc3LWFjMDFkOTJiNGVlZiIsImV4cCI6MTY3NzA2MjEyNSwiaXNzIjoiaHR0cHM6Ly9sb2NhbGhvc3Q6NDQzOTMiLCJhdWQiOiJodHRwczovL2xvY2FsaG9zdDo0NDM5MyJ9.rjLKfGp2OAbejw6M1Lidjg0BneO1wLfXR6E2NPMy7Cg"
+					},
+
+				},
+				"drawCallback": function (settings) { 
+					var response = settings.json;
+					console.log("response");
+				},"dataSrc": function (d) {
+					console.log(d);
+					return d
+				},
+				"columns": [
+					{ "data": "id" },
+					{ "data": "name" },
+					{"data": "is_active",
+						render: function (data, type, row, meta) {
+
+							if (data == true) {
+								data = " فعال";
+								return data;
+
+							} else {
+								data = "غير فعال";
+								return data;
+							}
+							data;
+						}
+					},
+					{
+						"data": "id",
+						render: function (data, type, row, meta) {
+							return `<div class="btn-group" role="group" aria-label="Basic example">
+                                                  <button class="btn btn-light" onclick="EditView(${meta.row})"><i class="fe fe-edit-2"></i></button>
+                                                </div>`
+							data;
+						}
+					}
+				],
+				"lengthChange": true,
+				"language": {
+					"searchPlaceholder": 'ابحث هنا ...',
+					"sSearch": '',
+					"lengthMenu": '_MENU_ عناصر/صفحة',
+				},
+				
+				buttons: ['copy', 'excel', 'pdfHtml5', 'print', 'colvis'],
+				// "ordering": false,
+				// "paging": true,
+				// "searching": false,
+				// "pagingType": "simple_numbers",
+				"pageLength": 10
+			});
+
+
+
+		}
+		function EditView(id) {
+
+			console.log(id);
+		}
+	</script>
 
 </body>
 
