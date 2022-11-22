@@ -256,6 +256,7 @@
 					<button aria-label="Close" class="close pos-absolute t-15 r-20 tx-26" data-bs-dismiss="modal"
 						type="button"><span aria-hidden="true">&times;</span></button>
 					<h5 class="modal-title mb-4 text-center">اضافة تصنيف جديد</h5>
+
 					<div class="form-group">
 						<input id="txtName" class="form-control" placeholder="الاسم" type="text">
 					</div>
@@ -268,7 +269,7 @@
 						</select>
 					</div>
 
-					<button class="btn ripple btn-primary" type="button">Save changes</button>
+					<button onclick="add_new_cat()" class="btn ripple btn-primary" type="button">Save changes</button>
 					<button class="btn ripple btn-secondary" data-bs-dismiss="modal" type="button">Close</button>
 				</div>
 			</div>
@@ -284,7 +285,7 @@
 						type="button"><span aria-hidden="true">&times;</span></button>
 					<h5 class="modal-title mb-4 text-center">تعديل تصنيف حالي</h5>
 					<div class="form-group">
-						<input id="txtID" class="form-control" placeholder="المعرف" type="text" disabled>
+						<input id="txtID" class="form-control" placeholder="المعرف" type="hidden">
 					</div>
 					<div class="form-group">
 						<input id="txtName2" class="form-control" placeholder="الاسم " type="text">
@@ -296,7 +297,7 @@
 							<option value="1">غير فعال</option>
 						</select>
 					</div>
-					<button class="btn ripple btn-primary" type="button">Save changes</button>
+					<button onclick="save_changes()" class="btn ripple btn-primary" type="button">Save changes</button>
 					<button class="btn ripple btn-secondary" data-bs-dismiss="modal" type="button">Close</button>
 				</div>
 			</div>
@@ -356,47 +357,17 @@
 
 
 	<script>
-
-
-		fillTable = () => {
-			var myHeaders = new Headers();
-			myHeaders.append("Authorization", "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoiMSIsImh0dHA6Ly9zY2hlbWFzLnhtbHNvYXAub3JnL3dzLzIwMDUvMDUvaWRlbnRpdHkvY2xhaW1zL25hbWVpZGVudGlmaWVyIjoiMSIsImp0aSI6ImI4MGIwNTliLWU5NjctNGJmZC1iOTc3LWFjMDFkOTJiNGVlZiIsImV4cCI6MTY3NzA2MjEyNSwiaXNzIjoiaHR0cHM6Ly9sb2NhbGhvc3Q6NDQzOTMiLCJhdWQiOiJodHRwczovL2xvY2FsaG9zdDo0NDM5MyJ9.rjLKfGp2OAbejw6M1Lidjg0BneO1wLfXR6E2NPMy7Cg");
-
-			var requestOptions = {
-				method: 'GET',
-				headers: myHeaders,
-				redirect: 'follow'
-			};
-
-			fetch('http://www.aljanubiachannel.somee.com/api/v1/Categorie/GetAll', requestOptions)
-				.then(response => response.json())
-				.then(data => {
-					let html = '';
-					for (i = 0; i < data.length; i++) {
-						html += '<tr>' +
-							'<td class="tdUsername pv3 w-35 pr3 bb b--black-20">' + data[i].id + '</td>' +
-							'<td class="tdUsername pv3 w-35 pr3 bb b--black-20">' + data[i].name + '</td>' +
-							'<td class="tdPassword pv3 w-35 pr3 bb b--black-20">' + data[i].is_active + '</td>' +
-							'<td><a id="edit" class="btn btn-sm btn-primary"><i class="fe fe-edit-2" data-bs-target="#modalEdit"' +
-							'data-bs-toggle="modal"></i></a></td>' +
-							'</tr>'
-					}
-					$('#data_body').html(html);
-				})
-				.catch(err => console.log("ERROR!: ", err))
-		}
-
-
 		$(document).ready(function () {
-			//fillTable();
 			get_table();
 
 		});
+		tableData = null;
 		function get_table() {
+			
 			var data_response;
 			var myHeaders = new Headers();
 			myHeaders.append("Authorization", "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoiMSIsImh0dHA6Ly9zY2hlbWFzLnhtbHNvYXAub3JnL3dzLzIwMDUvMDUvaWRlbnRpdHkvY2xhaW1zL25hbWVpZGVudGlmaWVyIjoiMSIsImp0aSI6ImI4MGIwNTliLWU5NjctNGJmZC1iOTc3LWFjMDFkOTJiNGVlZiIsImV4cCI6MTY3NzA2MjEyNSwiaXNzIjoiaHR0cHM6Ly9sb2NhbGhvc3Q6NDQzOTMiLCJhdWQiOiJodHRwczovL2xvY2FsaG9zdDo0NDM5MyJ9.rjLKfGp2OAbejw6M1Lidjg0BneO1wLfXR6E2NPMy7Cg");
-
+			myHeaders.append("active", "-1")
 			var requestOptions = {
 				method: 'GET',
 				headers: myHeaders,
@@ -405,12 +376,12 @@
 
 			fetch('http://www.aljanubiachannel.somee.com/api/v1/Categorie/GetAll', requestOptions)
 				.then(response => response.json())
+				
 				.then(response => {
 					data_response = { data: response };
-					console.log(data_response);
-
 					tableData = $("#exportexample").dataTable({
-						"data":response,
+						"retrieve":true,
+						"data": response,
 						"columns": [
 							{ "data": "id" },
 							{ "data": "name" },
@@ -432,8 +403,9 @@
 							{
 								"data": "id",
 								render: function (data, type, row, meta) {
+									console.log(row);
 									return `<div class="btn-group" role="group" aria-label="Basic example">
-								  <button class="btn btn-light" onclick="EditView(${meta.row})"><i class="fe fe-edit-2"></i></button>
+								  <button class="btn btn-light" onclick="EditView(${row.id},'${row.name}',${row.is_active})"><i class="fe fe-edit-2"></i></button>
 								</div>`
 									data;
 								}
@@ -443,7 +415,7 @@
 						"language": {
 							"searchPlaceholder": 'ابحث هنا ...',
 							"sSearch": '',
-							"lengthMenu": '_MENU_ عناصر/صفحة',
+							// "lengthMenu": '_MENU_ عناصر/صفحة',
 						},
 
 						buttons: ['copy', 'excel', 'pdfHtml5', 'print', 'colvis'],
@@ -451,17 +423,69 @@
 						"paging": true,
 						"searching": true,
 						"pagingType": "simple_numbers",
-						"pageLength": 10
-					});
-
-
+						"pageLength": 10,
+						"destroy": true,
+					}).reload();
 				})
 				.catch(err => console.log("ERROR!: ", err));
 
 		}
-		function EditView(id) {
+		function EditView(id, name, is_active) {
+			document.getElementById("txtID").value = id;
+			document.getElementById("txtName2").value = name;
+			if (is_active == true) {
+				document.getElementById('active2').value = 0;
+			} else if (is_active == false) {
+				document.getElementById('active2').value = 1;
+			}
 
-			console.log(id);
+			$('#modalEdit').modal('show');
+		}
+		function save_changes() {
+
+			var cat_id = document.getElementById("txtID").value;
+			var text = document.getElementById("txtName2").value;
+			var is_active = document.getElementById("active2").value;
+		}
+
+		function add_new_cat() {
+			var txtName = document.getElementById("txtName").value;
+			var active = document.getElementById("active").value;
+
+			if (txtName == null) {
+				alert("حقل الاسم فارغ ! ");
+			}
+			if (active == null) {
+				alert("حقل التفيل فارغ ! ");
+			}
+			if (active == 0) {
+				active = true;
+			}
+			else if (active == 1) {
+				active = false;
+			}
+
+			var settings = {
+				"url": "http://www.aljanubiachannel.somee.com/api/v1/Categorie/Create",
+				"method": "POST",
+				"timeout": 0,
+				"headers": {
+					"Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoiMSIsImh0dHA6Ly9zY2hlbWFzLnhtbHNvYXAub3JnL3dzLzIwMDUvMDUvaWRlbnRpdHkvY2xhaW1zL25hbWVpZGVudGlmaWVyIjoiMSIsImp0aSI6ImI4MGIwNTliLWU5NjctNGJmZC1iOTc3LWFjMDFkOTJiNGVlZiIsImV4cCI6MTY3NzA2MjEyNSwiaXNzIjoiaHR0cHM6Ly9sb2NhbGhvc3Q6NDQzOTMiLCJhdWQiOiJodHRwczovL2xvY2FsaG9zdDo0NDM5MyJ9.rjLKfGp2OAbejw6M1Lidjg0BneO1wLfXR6E2NPMy7Cg",
+					"Content-Type": "application/json"
+				},
+				"data": JSON.stringify({
+					"name": txtName,
+					"is_active": active
+				}),
+			};
+
+			$.ajax(settings).done(function (response) {
+				get_table();
+				$('#modalSave').modal('hide');
+
+			});
+
+
 		}
 	</script>
 
