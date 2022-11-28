@@ -218,20 +218,7 @@
                                     <div class="form-group">
                                         <label class="tx-medium">تصنيف البرنامج</label>
                                         <select id="categorie_id" class="form-control select2">
-											<option label="اختيار تصنيف">
-											</option>
-											<option value="1">
-												اخبار
-											</option>
-											<option value="2">
-												رياضة
-											</option>
-											<option value="3">
-												منوع
-											</option>
-											<option value="4">
-												عاجل
-											</option>
+											
 										</select>
                                     </div>
                                     <div class="form-group">
@@ -259,7 +246,7 @@
 
                                 </div>
                                 <div class="card-footer mb-1">
-                                    <button class="btn btn-primary">تعديل</button>
+                                    <button class="btn btn-primary" onclick="update_program()">تعديل</button>
                                 </div>
                             </div>
                         </div>
@@ -338,16 +325,72 @@
         $(document).ready(function() {
             var program_id = sessionStorage.getItem("program_id");
             document.getElementById("p_id").value = program_id;
-            update_program(program_id);
+            // update_program(program_id);
+            get_cats();
 
+            $("#demo").change(function(){
+            upload_file();
         });
 
+        
+        });
+
+        function get_cats(){
+
+            var settings = {
+  "url": "http://www.aljanubiachannel.somee.com/api/v1/Categorie/GetAll",
+  "method": "GET",
+  "timeout": 0,
+  "headers": {
+    "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoiMSIsImh0dHA6Ly9zY2hlbWFzLnhtbHNvYXAub3JnL3dzLzIwMDUvMDUvaWRlbnRpdHkvY2xhaW1zL25hbWVpZGVudGlmaWVyIjoiMSIsImp0aSI6ImI4MGIwNTliLWU5NjctNGJmZC1iOTc3LWFjMDFkOTJiNGVlZiIsImV4cCI6MTY3NzA2MjEyNSwiaXNzIjoiaHR0cHM6Ly9sb2NhbGhvc3Q6NDQzOTMiLCJhdWQiOiJodHRwczovL2xvY2FsaG9zdDo0NDM5MyJ9.rjLKfGp2OAbejw6M1Lidjg0BneO1wLfXR6E2NPMy7Cg"
+  },
+};
+
+$.ajax(settings).done(function (response) {
+    select = document.getElementById('categorie_id');
+
+
+    for (let i = 0; i < response.length; i++) {
+    console.log()
+    var opt = document.createElement('option');
+    opt.value = response[i]["id"];
+    opt.innerHTML = response[i]["name"];
+    select.appendChild(opt);
+
+
+}
+
+
+
+
+
+});
+        }
+
+        function upload_file(){
+            let photo = document.getElementById("demo").files[0];
+            let formData = new FormData();
+                
+            formData.append("photo", photo);
+            fetch('http://www.aljanubiachannel.somee.com/api/v1/Program/UploadImage', {method: "POST", body: formData,headers: {
+                    "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoiMSIsImh0dHA6Ly9zY2hlbWFzLnhtbHNvYXAub3JnL3dzLzIwMDUvMDUvaWRlbnRpdHkvY2xhaW1zL25hbWVpZGVudGlmaWVyIjoiMSIsImp0aSI6ImI4MGIwNTliLWU5NjctNGJmZC1iOTc3LWFjMDFkOTJiNGVlZiIsImV4cCI6MTY3NzA2MjEyNSwiaXNzIjoiaHR0cHM6Ly9sb2NhbGhvc3Q6NDQzOTMiLCJhdWQiOiJodHRwczovL2xvY2FsaG9zdDo0NDM5MyJ9.rjLKfGp2OAbejw6M1Lidjg0BneO1wLfXR6E2NPMy7Cg",
+                    "Content-Type": "application/json"
+                },}).then(response => response.text())
+  .then(result => console.log(result))
+  .catch(error => console.log('error', error));;
+
+
+        }
+
+
+        
         function update_program(p_id) {
             var title = document.getElementById("title").value;
-            var categorie_id = document.getElementById("categorie_id").value;
-            var path_title = document.getElementById("").value;
+            // var path_title = document.getElementById("").value;
             var description = document.getElementById("description").value;
             var time = document.getElementById("time").value;
+            var categorie_id = $('#categorie_id').find(":selected").val();
+            var active =  $('#active').find(":selected").val();
             var settings = {
                 "url": "http://www.aljanubiachannel.somee.com/api/v1/Program/Update",
                 "method": "POST",
@@ -358,12 +401,12 @@
                 },
                 "data": JSON.stringify({
                     "id": p_id,
-                    "categorie_id": 4,
-                    "title": "برنامج الصدمة",
+                    "categorie_id": categorie_id,
+                    "title": title,
                     "path_title": "p1.jpg",
-                    "description": "برنامج رمضاني عائلي",
-                    "time": "12:00:00",
-                    "is_active": true
+                    "description": description,
+                    "time": time,
+                    "is_active": active
                 }),
             };
 

@@ -161,7 +161,8 @@
 			// A couple of functions for handling actions.
 			var StartUpload = function(e) {
 				e.preventDefault();
-
+				
+	
 				// Set filename.
 				if (settings.edit && !data.ff_info.errors.length)
 				{
@@ -196,7 +197,15 @@
 				var SubmitUpload = function() {
 					activeuploads++;
 					data.ff_info.uploading = true;
-					data.submit();
+					let photo =  data.Files;
+					// let photo = document.getElementById("demo").value;
+					let formData = new FormData();
+					
+				formData.append("photo", photo);
+				fetch('http://www.aljanubiachannel.somee.com/api/v1/Program/UploadImage', {method: "POST", body: formData,headers: {
+						"Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoiMSIsImh0dHA6Ly9zY2hlbWFzLnhtbHNvYXAub3JnL3dzLzIwMDUvMDUvaWRlbnRpdHkvY2xhaW1zL25hbWVpZGVudGlmaWVyIjoiMSIsImp0aSI6ImI4MGIwNTliLWU5NjctNGJmZC1iOTc3LWFjMDFkOTJiNGVlZiIsImV4cCI6MTY3NzA2MjEyNSwiaXNzIjoiaHR0cHM6Ly9sb2NhbGhvc3Q6NDQzOTMiLCJhdWQiOiJodHRwczovL2xvY2FsaG9zdDo0NDM5MyJ9.rjLKfGp2OAbejw6M1Lidjg0BneO1wLfXR6E2NPMy7Cg",
+						"Content-Type": "application/json"
+					},});
 				};
 
 				if (settings.startupload)  settings.startupload.call(inforow, SubmitUpload, e, data);
