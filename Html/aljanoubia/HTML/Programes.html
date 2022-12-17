@@ -217,9 +217,9 @@
                                     <div class="row row-sm">
                                         <div class="col-sm-12">
                                             <div class="input-group">
-                                                <input type="text" class="form-control" placeholder="ابحث عن برنامج معين ...">
+                                                <input id="search" type="text" class="form-control" placeholder="ابحث عن برنامج معين ...">
                                                 <span class="">
-													<button class="btn ripple btn-primary" type="button">بحث</button>
+													<button class="btn ripple btn-primary" type="button" onclick="applyFillter2()">بحث</button>
 												</span>
                                             </div>
                                         </div>
@@ -235,15 +235,12 @@
                                         <div class="card-body">
                                             <div class="form-group">
                                                 <label class="form-label">التصنيفات</label>
-                                                <select name="beast" id="select-beast" class="form-control select2">
+                                                <select name="beast" id="select-Categorie" class="form-control select2">
 													<option label="Select"></option>
-													<option value="1">اخبار</option>
-													<option value="2">رياضة</option>
-													<option value="3">منوع</option>
-													<option value="4">عاجل</option>
+													
 												</select>
                                             </div>
-                                            <button class="btn ripple btn-primary btn-block">تطبيق الفلتر</button>
+                                            <button class="btn ripple btn-primary btn-block" onclick="applyFillter()">تطبيق الفلتر</button>
                                         </div>
                                     </div>
                                 </div>
@@ -316,63 +313,7 @@
 
     <!-- Custom js -->
     <script src="../assets/js/custom.js"></script>
-
-
-    <script>
-        $(document).ready(function() {
-            get_all_programs();
-
-        });
-
-        function get_all_programs() {
-            var form = new FormData();
-            var settings = {
-                "url": "http://www.aljanubiachannel.somee.com/api/v1/Program/GetAll",
-                "method": "GET",
-                "timeout": 0,
-                "headers": {
-                    "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoiMSIsImh0dHA6Ly9zY2hlbWFzLnhtbHNvYXAub3JnL3dzLzIwMDUvMDUvaWRlbnRpdHkvY2xhaW1zL25hbWVpZGVudGlmaWVyIjoiMSIsImp0aSI6ImI4MGIwNTliLWU5NjctNGJmZC1iOTc3LWFjMDFkOTJiNGVlZiIsImV4cCI6MTY3NzA2MjEyNSwiaXNzIjoiaHR0cHM6Ly9sb2NhbGhvc3Q6NDQzOTMiLCJhdWQiOiJodHRwczovL2xvY2FsaG9zdDo0NDM5MyJ9.rjLKfGp2OAbejw6M1Lidjg0BneO1wLfXR6E2NPMy7Cg"
-                },
-                "processData": false,
-                "mimeType": "multipart/form-data",
-                "contentType": false,
-                "data": form
-            };
-
-            $.ajax(settings).done(function(response) {
-                print_programs(response);
-            });
-        }
-
-        function print_programs(data) {
-            data = JSON.parse(data);
-            var program = '';
-            data.forEach(function(item, index) {
-
-                program += '<div class="col-md-6 col-lg-6 col-xl-4 col-sm-6"><div class="card custom-card"><div class="p-0 ht-100p">';
-                program += '<div class="product-grid"><div class="product-image"><a onclick="edit_program(' + item["id"] + ')" class="image">';
-                program += '<img class="pic-1" alt="product-image-1" src="../assets/img/programmes/p1.jpg">';
-                program += '<img class="pic-2" alt="product-image-2" src="../assets/img/programmes/p11.jpg">';
-                program += ' </a><div class="product-link"><a href="AddProgrameEpisodes.html"><i class="fa fa-plus-circle"></i>';
-                program += '<span>اضافة حلقة جديدة</span> </a> <a onclick="edit_program(' + item["id"] + ')">';
-                program += '<i class = "fas fa-pencil-square" > </i> <span> تعديل معلومات البرنامج </span> </a> </div > </div> ';
-                program += '<div class = "product-content" ><h3 id = "programeName"class = "title" > <a href = "#" > ' + item["title"] + '</a>';
-                program += '</h3><div class = "price" > <span id = "programmeCategorie" > ' + item["description"] + ' </span></div></div> </div> </div> </div > </div> ';
-
-
-            });
-            document.getElementById("programs_container").innerHTML = program;
-
-        }
-
-        function edit_program(id) {
-            //EditPrograme.html
-            var program_id = id;
-            sessionStorage.setItem("program_id", program_id);
-            window.location.href = 'EditPrograme.html';
-
-        }
-    </script>
+    <script src="../assets/js/pages/programs.js"></script>
 
 </body>
 

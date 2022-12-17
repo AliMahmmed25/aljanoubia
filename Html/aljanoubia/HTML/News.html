@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="ar" id="news">
+
+<head>
+
+	<meta charset="utf-8">
+	<meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport">
+
+
+	<!-- Title -->
+	<title>الاخبار </title>
+
+	<!-- Bootstrap css-->
+	<link id="style" href="../assets/plugins/bootstrap/css/bootstrap.rtl.min.css" rel="stylesheet" />
+	<!-- DATA TABLE CSS -->
+	<link href="https://www.jqueryscript.net/css/jquerysctipttop.css" rel="stylesheet" type="text/css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/flatly/bootstrap.min.css">
+	<link rel="stylesheet" href="https://cdn.materialdesignicons.com/5.0.45/css/materialdesignicons.min.css">
+	<!-- InternalFancy uploader css-->
+	<link href="../assets/plugins/fancyuploder/fancy_fileupload.css" rel="stylesheet" />
+	<link href="../assets/plugins/datatable/css/dataTables.bootstrap5.css" rel="stylesheet" />
+	<link href="../assets/plugins/datatable/css/buttons.bootstrap5.min.css" rel="stylesheet">
+	<link href="../assets/plugins/datatable/css/responsive.bootstrap5.css" rel="stylesheet" />
+
+	<!-- Icons css-->
+	<link href="../assets/plugins/web-fonts/icons.css" rel="stylesheet" />
+	<link href="../assets/plugins/web-fonts/font-awesome/font-awesome.min.css" rel="stylesheet">
+	<link href="../assets/plugins/web-fonts/plugin.css" rel="stylesheet" />
+
+	<!-- Style css-->
+	<link href="../assets/css/style.css" rel="stylesheet">
+	<link href="../assets/css/combotree.css" rel="stylesheet">
+	<!-- Select2 css-->
+	<link href="../assets/plugins/select2/css/select2.min.css" rel="stylesheet">
+
+	<!-- Mutipleselect css-->
+	<link rel="stylesheet" href="../assets/plugins/multipleselect/multiple-select.css">
+
+
+</head>
+
+<body class="rtl main-body rightmenu">
+
+	<!-- Loader -->
+	<div id="global-loader">
+		<img src="../assets/img/loader.svg" class="loader-img" alt="Loader">
+	</div>
+	<!-- End Loader -->
+
+
+	<!-- Page -->
+	<div class="page">
+
+		<!-- Main Header-->
+		<div class="main-header side-header sticky">
+			<div class="main-container container-fluid">
+				<div class="main-header-right">
+					<a class="main-header-menu-icon" href="javascript:void(0)" id="mainSidebarToggle"><span></span></a>
+					<div class="hor-logo">
+						<a class="main-logo" href="#">
+							<img src="../assets/img/brand/aljanoubia.png" class="header-brand-img desktop-logo"
+								alt="logo">
+							<img src="../assets/img/brand/aljanoubia.png" class="header-brand-img desktop-logo-dark"
+								alt="logo">
+						</a>
+					</div>
+				</div>
+				<div class="main-header-center">
+					<div class="responsive-logo">
+						<a href="#"><img src="../assets/img/brand/aljanoubia.png" class="mobile-logo" alt="logo"></a>
+						<a href="#"><img src="../assets/img/brand/aljanoubia.png" class="mobile-logo-dark"
+								alt="logo"></a>
+					</div>
+
+				</div>
+				<div class="main-header-right">
+					<button class="navbar-toggler navresponsive-toggler" type="button" data-bs-toggle="collapse"
+						data-bs-target="#navbarSupportedContent-4" aria-controls="navbarSupportedContent-4"
+						aria-expanded="false" aria-label="Toggle navigation">
+						<i class="fe fe-more-vertical header-icons navbar-toggler-icon"></i>
+					</button><!-- Navresponsive closed -->
+					<div
+						class="navbar navbar-expand-lg  nav nav-item  navbar-nav-right responsive-navbar navbar-dark  ">
+						<div class="collapse navbar-collapse" id="navbarSupportedContent-4">
+							<div class="d-flex order-lg-2 ms-auto">
+
+								<!-- Theme-Layout -->
+								<div class="dropdown d-flex main-header-theme">
+									<a class="nav-link icon layout-setting">
+										<span class="dark-layout">
+											<i class="fe fe-sun header-icons"></i>
+										</span>
+										<span class="light-layout">
+											<i class="fe fe-moon header-icons"></i>
+										</span>
+									</a>
+								</div>
+								<!-- Theme-Layout -->
+
+								<!-- Full screen -->
+								<div class="dropdown ">
+									<a class="nav-link icon full-screen-link">
+										<i class="fe fe-maximize fullscreen-button fullscreen header-icons"></i>
+										<i class="fe fe-minimize fullscreen-button exit-fullscreen header-icons"></i>
+									</a>
+								</div>
+								<!-- Full screen -->
+
+								<!-- Profile -->
+								<div class="dropdown main-profile-menu">
+									<a class="d-flex" href="javascript:void(0)">
+										<span class="main-img-user"><img alt="avatar"
+												src="../assets/img/users/1.jpg"></span>
+									</a>
+									<div class="dropdown-menu">
+										<div class="header-navheading">
+											<h6 id="username" class="main-notification-title">الاسم الاول + الاسم الاخير
+											</h6>
+											<p id="jobtital" class="main-notification-text">العنوان الوظيفي</p>
+										</div>
+
+										<a class="dropdown-item" href="Login.html">
+											<i class="fe fe-power"></i> تسجيل خروج
+										</a>
+									</div>
+								</div>
+								<!-- Profile -->
+
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- End Main Header-->
+
+		<!-- Sidemenu -->
+		<div class="sticky">
+			<div class="main-menu main-sidebar main-sidebar-sticky side-menu">
+				<div class="main-sidebar-header main-container-1 active">
+					<div class="sidemenu-logo">
+						<a class="main-logo" href="#">
+							<img src="../assets/img/brand/aljanoubia.png" class="header-brand-img desktop-logo"
+								alt="logo">
+							<img src="../assets/img/brand/aljanoubia.png"
+								class="header-brand-img desktop-logo theme-logo" alt="logo">
+						</a>
+					</div>
+					<div class="main-sidebar-body main-body-1">
+						<div class="slide-right disabled" id="slide-right"><i class="fe fe-chevron-right"></i></div>
+						<ul class="menu-nav nav">
+							<li class="nav-header"><span class="nav-label">نظام ادارة الموقع</span></li>
+							<li class="nav-item">
+								<a class="nav-link" href="index.html">
+									<i class="ti-home sidemenu-icon menu-icon "></i>
+									<span class="sidemenu-label">الواجهة الرائيسية</span>
+								</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" href="Programes.html">
+									<i class="ti-gallery sidemenu-icon menu-icon "></i>
+									<span class="sidemenu-label">عرض البرامج</span>
+								</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" href="Users.html">
+									<i class="ti-user sidemenu-icon menu-icon "></i>
+									<span class="sidemenu-label">المستخدمين</span>
+								</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" href="Categorie.html">
+									<i class="ti-archive sidemenu-icon menu-icon "></i>
+									<span class="sidemenu-label">تصنيفات الاخبار</span>
+								</a>
+							</li>
+						</ul>
+						<div class="slide-right" id="slide-right"><i class="fe fe-chevron-right"></i></div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- End Sidemenu -->
+
+		<!-- Main Content-->
+		<div class="main-content side-content pt-0">
+
+			<div class="main-container container-fluid">
+				<div class="inner-body">
+
+					<!-- Page Header -->
+					<div class="page-header">
+
+					</div>
+					<!-- End Page Header -->
+					<!-- Row -->
+					<div class="row row-sm">
+						<div class="col-lg-12">
+							<div class="card custom-card overflow-hidden">
+								<div class="card-body">
+									<div style="margin-bottom: 10px;">
+										<button class="btn ripple btn-primary pd-x-15 mg-r-5"
+											data-bs-target="#modalSave" data-bs-toggle="modal">اضافة خبر جديد</button>
+									</div>
+									<div>
+
+									</div>
+									<div class="table-responsive">
+										<table id="exportexample"
+											class="table table-bordered border-t0 key-buttons text-wrap w-100">
+											<thead>
+												<tr>
+													<th>المعرف</th>
+													<th>العنوان</th>
+													<th>نوع الخبر</th>
+													<th>التاريخ</th>
+													<th>اجراء</th>
+												</tr>
+											</thead>
+											<tbody id="data_body">
+
+
+
+											</tbody>
+										</table>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!-- End Row -->
+
+				</div>
+			</div>
+		</div>
+		<!-- End Main Content-->
+
+		<!-- Main Footer-->
+		<div class="main-footer text-center">
+			<div class="container">
+				<div class="row row-sm">
+					<div class="col-md-12">
+						<span>حقوق النشر © 2022 <a href="javascript:void(0)">موقع قناة الجنوب</a>. <a
+								href="http://safefenceit.com/"></a>كل الحقوق محفوظة.</span>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--End Footer-->
+
+
+	</div>
+	<!-- End Page -->
+	<!-- Large Modal -->
+	<div class="modal" id="modalSave">
+		<div class="modal-dialog modal-lg" role="document">
+			<div class="modal-content modal-content-demo">
+				<div class="modal-header">
+					<h6 class="modal-title">اضافة خبر جديد</h6><button aria-label="Close" class="btn-close"
+						data-bs-dismiss="modal" type="button"></button>
+				</div>
+				<div class="modal-body">
+					<div class="form-group">
+						<select id="NewsTypesID" class="form-control" aria-placeholder="نوع الخبر" Required>
+							<option value="" selected hidden>اختيار نوع الخبر</option>
+						</select>
+					</div>
+					<div class="form-group">
+						<label class="tx-medium">العنوان</label>
+						<input id="title" type="text" class="form-control" placeholder="العنوان">
+					</div>
+					<div class="ql-wrapper ql-wrapper-demo mb-3">
+						<label class="tx-medium">تفاصيل الخبر</label>
+						<textarea id="description" class="form-control" name="example-textarea-input" rows="14"
+							placeholder="كتابة تفاصيل الخبر" data-gramm="false" wt-ignore-input="true"
+							data-quillbot-element="Cv0xpZYKS7ykC71UAxdPs"></textarea>
+					</div>
+					<div class="form-group">
+						<label class="tx-medium">تحميل صور الخبر</label>
+						<div class="p-4 border rounded-6 mb-0 form-group">
+							<div>
+								<input id="thefiles" type="file" name="files" accept=".jpg, .png, image/jpeg, image/png"
+									multiple>
+							</div>
+						</div>
+
+					</div>
+
+
+
+				</div>
+				<div class="modal-footer">
+					<button class="btn ripple btn-primary" type="button" onclick="add_new_news1()">حفظ</button>
+					<button class="btn ripple btn-secondary" data-bs-dismiss="modal" type="button" >اغلاق</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!--End Large Modal -->
+	<!-- Large Modal -->
+	<div class="modal" id="modalEdit">
+		<div class="modal-dialog modal-lg" role="document">
+			<div class="modal-content modal-content-demo">
+				<div class="modal-header">
+					<h6 class="modal-title">تعديل خبر</h6><button aria-label="Close" class="btn-close"
+						data-bs-dismiss="modal" type="button"></button>
+				</div>
+				<div class="modal-body">
+					<div class="form-group">
+						<input id="txtID" class="form-control" placeholder="المعرف" type="text">
+					</div>
+					<div class="form-group">
+						<select id="NewsTypesID2" class="form-control" aria-placeholder="نوع الخبر" Required>
+							<option value="" selected hidden>اختيار نوع الخبر</option>
+						</select>
+					</div>
+					<div class="form-group">
+						<label class="tx-medium">العنوان</label>
+						<input id="title2" type="text" class="form-control" placeholder="العنوان">
+					</div>
+					<div class="ql-wrapper ql-wrapper-demo mb-3">
+						<label class="tx-medium">تفاصيل الخبر</label>
+						<textarea id="description" class="form-control" name="example-textarea-input" rows="14"
+							placeholder="كتابة تفاصيل الخبر" data-gramm="false" wt-ignore-input="true"
+							data-quillbot-element="Cv0xpZYKS7ykC71UAxdPs"></textarea>
+					</div>
+
+				</div>
+				<div class="modal-footer">
+					<button class="btn ripple btn-primary" type="button">حفظ</button>
+					<button class="btn ripple btn-secondary" data-bs-dismiss="modal" type="button">اغلاق</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!--End Large Modal -->
+
+
+	<!-- Back-to-top -->
+	<a href="#top" id="back-to-top"><i class="fe fe-arrow-up"></i></a>
+
+	<!-- Jquery js-->
+	<script src="../assets/plugins/jquery/jquery.min.js"></script>
+
+	<!-- Bootstrap js-->
+	<script src="../assets/plugins/bootstrap/js/popper.min.js"></script>
+	<script src="../assets/plugins/combotree/comboTreePlugin.js"></script>
+	<script src="../assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+
+
+	<!-- Internal Data Table js -->
+	<script src="../assets/plugins/datatable/js/jquery.dataTables.min.js"></script>
+	<script src="../assets/plugins/datatable/js/dataTables.bootstrap5.js"></script>
+	<script src="../assets/plugins/datatable/js/dataTables.buttons.min.js"></script>
+	<script src="../assets/plugins/datatable/js/buttons.bootstrap5.min.js"></script>
+	<script src="../assets/plugins/datatable/js/jszip.min.js"></script>
+	<script src="../assets/plugins/datatable/pdfmake/pdfmake.min.js"></script>
+	<script src="../assets/plugins/datatable/pdfmake/vfs_fonts.js"></script>
+	<script src="../assets/plugins/datatable/js/buttons.html5.min.js"></script>
+	<script src="../assets/plugins/datatable/js/buttons.print.min.js"></script>
+	<script src="../assets/plugins/datatable/js/buttons.colVis.min.js"></script>
+	<script src="../assets/plugins/datatable/dataTables.responsive.min.js"></script>
+	<script src="../assets/plugins/datatable/responsive.bootstrap5.min.js"></script>
+	<script src="../assets/js/table-data.js"></script>
+	<script src="../assets/js/select2.js"></script>
+	<!-- Peity js-->
+	<script src="../assets/plugins/peity/jquery.peity.min.js"></script>
+
+	<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
+	<!-- Select2 js-->
+	<script src="../assets/plugins/select2/js/select2.min.js"></script>
+	<script src="../assets/js/select2.js"></script>
+
+	<!-- Perfect-scrollbar js -->
+	<script src="../assets/plugins/perfect-scrollbar/perfect-scrollbar.min.js"></script>
+
+
+
+	<!-- Sidebar js -->
+	<script src="../assets/plugins/sidebar/sidebar.js"></script>
+
+	<!-- Color Theme js -->
+	<script src="../assets/js/themeColors.js"></script>
+	<!-- Custom js -->
+	<script src="../assets/js/custom.js"></script>
+	<script src="../assets/js/pages/News.js"></script>
+	
+
+
+</body>
+
+</html>

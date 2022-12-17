@@ -1,10 +1,16 @@
+
+@font-face {
+    font-family: Cairo;
+    src: url(Fonts/Cairo-VariableFont_wght.ttf) format(truetype);
+}
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
 *
+
 {
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
-  font-family: 'Poppins', sans-serif;
+  font-family: Cairo, sans-serif;
 }
 body 
 {
@@ -13,14 +19,14 @@ body
 	align-items: center;
 	min-height: 100vh;
 	flex-direction: column;
-	background: #24243e;
+	background: #004445;
 }
 .box 
 {
 	position: relative;
 	width: 380px;
 	height: 420px;
-	background: #0e0e23;
+	background: #021C1E;
 	border-radius: 8px;
 	overflow: hidden;
 }
@@ -34,7 +40,7 @@ body
 	width: 380px;
 	height: 420px;
 	transform-origin: bottom right;
-	background: linear-gradient(0deg,transparent,#6259ca,#6259ca);
+	background: linear-gradient(0deg,transparent,#6FB98F,#6FB98F);
 	animation: animate 6s linear infinite;
 }
 .box::after 
@@ -47,7 +53,7 @@ body
 	width: 380px;
 	height: 420px;
 	transform-origin: bottom right;
-	background: linear-gradient(0deg,transparent,#6259ca,#6259ca);
+	background: linear-gradient(0deg,transparent,#6FB98F,#6FB98F);
 	animation: animate 6s linear infinite;
 	animation-delay: -3s;
 }
@@ -66,7 +72,7 @@ form
 {
 	position: absolute;
 	inset: 2px;
-	background: #0e0e23;
+	background: #021C1E;
 	padding: 50px 40px;
 	border-radius: 8px;
 	z-index: 2;
@@ -75,7 +81,7 @@ form
 }
 h2 
 {
-	color: #6259ca;
+	color: #f8f9fa;
 	font-weight: 500;
 	text-align: center;
 	letter-spacing: 0.1em;
@@ -96,7 +102,7 @@ h2
 	outline: none;
 	box-shadow: none;
 	border: none;
-	color: #23242a;
+	color: #f8f9fa;
 	font-size: 1em;
 	letter-spacing: 0.05em;
 	transition: 0.5s;
@@ -110,14 +116,14 @@ h2
 	padding: 20px 0px 10px;
 	pointer-events: none;
 	font-size: 1em;
-	color: #8f8f8f;
+	color: #f8f9fa;
 	letter-spacing: 0.05em;
 	transition: 0.5s;
 }
 .inputBox input:valid ~ span,
 .inputBox input:focus ~ span 
 {
-	color: #6259ca;
+	color: #f8f9fa;
 	transform: translateX(0px) translateY(-34px);
 	font-size: 0.75em;
 }
@@ -129,7 +135,7 @@ h2
 	bottom: 0;
 	width: 100%;
 	height: 2px;
-	background: #6259ca;
+	background: #6FB98F;
 	border-radius: 4px;
 	overflow: hidden;
 	transition: 0.5s;
@@ -158,21 +164,23 @@ h2
 .links a:hover, 
 .links a:nth-child(2)
 {
-	color: #6259ca;
+	color: #f8f9fa;
 }
-input[type="submit"]
+input[type="button"]
 {
 	border: none;
 	outline: none;
-	padding: 11px 25px;
-	background: #6259ca;
+	padding: 11px 11px;
+	background: #004445;
 	cursor: pointer;
 	border-radius: 4px;
 	font-weight: 600;
-	width: 100px;
-	margin-top: 10px;
+	width: 150px;
+	margin-top: 20px;
+	margin-left: 75px;
+	color: #f8f9fa;
 }
-input[type="submit"]:active 
+input[type="button"]:active 
 {
 	opacity: 0.8;
 }
